@@ -1,4 +1,4 @@
-baseURL = "https://dy08pdae2ui3e.cloudfront.net/ca9/public"
+baseURL = "https://dy08pdae2ui3e.cloudfront.net/"
 buildDrafts = false
 contentDir = "content"
 languageCode = "en-us"

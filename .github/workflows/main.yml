@@ -32,4 +32,4 @@ jobs:
          S3CMD_ADD_HEADERS: ''          # optional: defaults empty
          S3CMD_CF_INVALIDATE: 'true'    # optional: default true
          S3CMD_EXTRA_OPTS: '--acl-public' # optional: default --verbose
-         S3CMD_DELETE_REMOVED: 'false'   # optional: default true
+         S3CMD_DELETE_REMOVED: 'true'   # optional: default true

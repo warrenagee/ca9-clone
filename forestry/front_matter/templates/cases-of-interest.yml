@@ -1,0 +1,36 @@
+---
+label: Cases of Interest
+hide_body: false
+fields:
+- type: text
+  name: layout
+  label: layout
+  default: index
+- type: text
+  name: title
+  label: title
+- type: text
+  name: case_number
+  label: case_number
+- name: date
+  type: datetime
+  label: Date
+  description: ''
+  config:
+    required: false
+    date_format: MM/DD/YY
+    time_format: 
+    display_utc: false
+pages:
+- content/cases-of-interest/advanced-integrative-medical-science-institute-v.garland.md
+- content/cases-of-interest/advanced-integrative-medical-science-institute-v.garland.md
+- content/cases-of-interest/harvest-rock-church-v.newsom.md
+- content/cases-of-interest/harvest-rock-church-v.newsom.md
+- content/cases-of-interest/la-alliance-for-human-rights.md
+- content/cases-of-interest/la-alliance-for-human-rights.md
+- content/cases-of-interest/miller-v.bonta.md
+- content/cases-of-interest/miller-v.bonta.md
+- content/cases-of-interest/perry-v.hollingsworth.md
+- content/cases-of-interest/perry-v.hollingsworth.md
+- content/cases-of-interest/tandon-v.newsom.md
+- content/cases-of-interest/tandon-v.newsom.md

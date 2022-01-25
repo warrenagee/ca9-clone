@@ -1,0 +1,83 @@
++++
+type = "email-form-mediation-conf-info"
+layout = "index"
+title = "Submit Confidential Information"
++++
+
+<div id="container">
+
+<form id="contactForm" name="contactForm" action="">
+<h2>United States Court of Appeals for the Ninth Circuit</h2>
+<h4>Submit Confidential Information</h4>
+<div id="please_complete">
+Please complete this form to submit pertinent confidential information directly to the Circuit Mediators. Information submitted through this form will not appear on the docket and will be seen only by the Circuit Mediators.
+</div>
+
+<div id="instructions">
+Confidential submissions may include any information relevant to mediation of the case and settlement potential, including, but not limited to, settlement history, ongoing or potential settlement discussions, non-litigated party related issues, other pending actions, and timing considerations that may impact mediation efforts.
+</div> <!-- instructions -->
+
+<table id="formTable">
+<tr>
+<td>
+<div id="inputData"></div>
+</td>
+</tr>
+<tr><td>&nbsp;</td></tr>
+<tr>
+<td>
+<span style="color: red;"><b>All fields are required.</b></span>                                                                                        
+</td>
+</tr>
+<tr><td>&nbsp;</td></tr>
+<tr>
+<td>
+<label id="counsel-error" class="error" for="counsel"></label>
+<label for="counsel">Counsel submitting this form</label>
+<input type="text" id="counsel" name="counsel">
+</td>
+</tr>
+<tr><td>&nbsp;</td></tr>
+<tr>
+<td>
+<label id="party-error" class="error" for="party"></label>
+<label for="party">Represented Party/Parties</label>
+<input type="text" id="party" name="party">
+</td>
+</tr>
+<tr><td>&nbsp;</td></tr>
+<tr>
+<td>
+<label id="info-error" class="error" for="info"></label>
+<label for="phone">Confidential Information</label>
+<textarea id="info" name="info"></textarea>
+</td>
+</tr>
+<tr><td>&nbsp;</td></tr>
+<tr>
+<td>
+<span style="margin-left: 300px;" id="activity_pane"></span>
+</td>
+</tr>
+<tr>
+<td>
+<div style="text-align: center; padding-top: 5px; padding-bottom: 20px;"></div>
+</td>
+</tr>
+<tr>
+
+<td style="padding-right: 20px;" width="50%" align="right">
+<input class="buttons" id="cancel" name="cancel" type="button" value="Cancel" onClick="resetForm();">
+</td>
+<td style="padding-left: 20px" width="50%" align-"left">
+<input class="buttons" id="submit" name="submit" type="submit" value="Submit">
+</td>
+</tr>
+</table>
+<input type="hidden" id="caseNum" name="caseNum">
+<input type="hidden" id="caseName" name="caseName">
+</form>
+
+</div>
+
+

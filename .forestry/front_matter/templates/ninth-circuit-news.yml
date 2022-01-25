@@ -1,0 +1,54 @@
+---
+label: Ninth Circuit News
+hide_body: false
+fields:
+- name: type
+  type: text
+  config:
+    required: true
+  label: Type
+  default: ninth-circuit-news-singles
+- name: layout
+  type: text
+  config:
+    required: true
+  label: Layout
+  default: index
+- name: date
+  type: datetime
+  description: ''
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+  label: Date
+  default: now
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+- name: link
+  type: text
+  config:
+    required: false
+  label: Link
+pages:
+- content/ninth-circuit-news/2020-ninth-circuit-annual-report.md
+- content/ninth-circuit-news/chief-judge-emeritus-j.clifford-wallace-to-receive-duke-law-school-s-bolch-prize.md
+- content/ninth-circuit-news/civics-contest-winners-panel.md
+- content/ninth-circuit-news/court-obituary-for-judge-fred-van-sickle.md
+- content/ninth-circuit-news/court-of-appeals-reappoints-bankruptcy-judge-laura-s.taylor-to-southern-district-of-california.md
+- content/ninth-circuit-news/gavel-passing-brings-new-chief-judge-to-the-ninth-circuit-court-of-appeals.md
+- content/ninth-circuit-news/judge-m.margaret-mckeown-receives-washington-women-lawyers-president-s-award.md
+- content/ninth-circuit-news/ninth-circuit-court-of-appeals-appoints-new-bankruptcy-judge-for-central-district-of-california.md
+- content/ninth-circuit-news/ninth-circuit-judge-m.margaret-mckeown-to-take-senior-status.md
+- content/ninth-circuit-news/northern-district-of-california-clerk-susan-soong-named-ninth-circuit-s-new-circuit-executive.md
+- content/ninth-circuit-news/northern-district-s-work-opportunity-and-resources-for-change-team-focuses-on-individual-needs.md
+- content/ninth-circuit-news/senate-confirms-five-new-judges-for-the-u.s-district-courts-in-california-and-washington.md
+- content/ninth-circuit-news/senate-confirms-jennifer-sung-to-seat-on-u.s.court-of-appeals-for-the-ninth-circuit.md
+- content/ninth-circuit-news/senate-confirms-judge-lucy-haeran-koh-to-seat-on-u.s.court-of-appeals-for-the-ninth-circuit.md
+- content/ninth-circuit-news/senate-confirms-justice-gabriel-p.sanchez-to-seat-on-u.s.court-of-appeals-for-the-ninth-circuit.md
+- content/ninth-circuit-news/senate-confirms-lauren-j.king-for-federal-judgeship-in-western-district-of-washington.md
+- content/ninth-circuit-news/senate-confirms-new-judge-for-u.s.district-court-for-western-district-of-washington.md

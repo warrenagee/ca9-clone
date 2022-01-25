@@ -1,0 +1,86 @@
+<table style="width: 200px; border: 1px solid #E0E0E0;" class="data-table-newss">
+            <tr>
+                <td style="padding: 5px; background-color: #E0E0E0">
+                        Ninth Circuit News
+                </td>
+             </tr>
+            <tr>
+                <td style="background-color: #eeeeee; padding: 5px; font-size: 13px; font-weight: bold;">
+
+            {{ range first 5  (where .Site.RegularPages "Section" "ninth-circuit-news") }}
+                   <div class="newslinks">
+
+
+                {{ $var14 := now.AddDate 0 0 -14 }}
+                {{ $var14FM := $var14.Format "20060102" }}
+                {{ $varFile := .Params.date.Format "20060102" }}
+                {{ $var1 := .Params.link }}
+                {{ $var2  := .File.TranslationBaseName }}
+                {{ $var3 := .Params.Title }}
+
+
+        {{ if lt $var14FM $varFile }}
+             <img src="https://cdn.ca9.uscourts.gov/assets/images/button_NEW_dark-red.gif">
+        {{ end }}
+
+
+        {{ with .Params.link }}
+
+ <a style="text-decoration: none; font-weight: bold;" href='{{ $var1 }}'>{{ $var3 }}</a><br />           
+
+        {{ else }}
+
+ <a style="text-decoration: none; font-weight: bold;" href='{{ .Site.BaseURL }}ninth-circuit-news/{{ $var2 }}'>{{ $var3 }}</a><br />   
+
+        {{ end }}
+
+
+                   </div>
+
+            {{ end }}
+
+		<p class="ZZZnewslinks">	
+                &nbsp;&nbsp;<a style="color: #003399; font-weight: normal;" href ="/ninth-circuit-news/">>>More News</a>
+
+            </td>
+	    </tr>	
+
+        </table>
+
+<br>
+
+<table style="width: 200px; border: 1px solid #E0E0E0;" class="data-table-news">
+            <tr>
+                <td style="padding: 5px; background-color: #E0E0E0"> 
+                        Judgeship
+                </td>
+             </tr>
+            <tr>
+                <td style="background-color: #EEEEEE; padding: 5px; color: #000; font-size: 13px; font-weight: bold;">
+
+            {{ range (where .Site.RegularPages "Section" "judgeship") }}
+   
+  <p><a style="font-size: 13px; font-weight: bold; text-decoration: none;" href="{{.Params.Link}}">{{.Title}}</a></p>
+  <span style="margin-bottom: 15px; font-size: 12px; color: #000; font-weight:normal;">{{.Content}}</span>
+
+            {{ end }}
+                         </td>
+             </tr>
+        </table>
+<br>
+<!-- <a href="/community/"><img src="//cdn.ca9.uscourts.gov/assets/community/images/pico.jpg"></a> -->
+<br>
+<br>
+<div style="width: 200px; font-weight: normao; padding: 5px; background-color: #E0E0E0">Policies & Initiatives</div>
+
+<div style="width: 200px; background-color: #EEEEEE; padding: 5px; color: #000; font-size: 13px; font-weight: bold;">
+
+<a href="https://cdn.ca9.uscourts.gov/datastore/uploads/news_media/camera.guidelines.pdf" target="_blank" class="newslink">Camera Guidelines</a>
+          <br><br>
+<a href="https://cdn.ca9.uscourts.gov/datastore/uploads/calendar/elec_policy6_23_10.pdf" target="_blank" class="newslink">Electronic Devices Policy</a>
+          <br><br>
+<a href="https://circ9-datastore.s3.us-west-1.amazonaws.com/datastore/district/MJEB_guide.pdf" target="_blank" class="newslink">Obtaining Electronic Data</a>  
+          <br><br>
+<a href="/annual-reports/" target="_blank" class="newslink">Annual Reports</a>
+
+</div>

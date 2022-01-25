@@ -1,0 +1,73 @@
+{{ $.Scratch.Add "headerImage" "nav-top-main.jpg" }}
+{{ partial "header-main.html" . }}
+<title>{{ .Title }}</title>
+<style>
+  h2{color: #000 !important;}
+  h3{color: #000 !important;}
+
+  hr { color:#000099;}
+  ol li {padding-bottom:15px; line-height:1.5;}
+  ul li {padding-bottom:15px; line-height:1.5}
+  ol li ol li {padding-bottom:5px; line-height:1.5}
+  ol li ul li {padding-bottom:5px; line-height:1.5}
+  ul li ul li {padding-bottom:5px; line-height:1.5}
+  ul li ol li {padding-bottom:5px; line-height:1.5}
+  td ul li  {padding-bottom:0}
+  ol.withalpha li {list-style-type:lower-alpha;}
+  .red {color:#FF0000;margin-bottom:9px; margin-top:9px;}
+  .red {font-weight:bold;font-style:italic;}
+  .redtext {color:#FF0000;margin-bottom:9px; margin-top:9px;}
+  .redtext {font-weight:bold;font-style:italic;}
+  .redbold {color:#FF0000; font-weight:bold}
+  .thead { font-size: 10pt; font-weight:bold; color:#000099; text-decoration: none; text-align:left}
+
+
+   li, p {
+	padding-bottom: 10px;
+   }
+
+</style>
+</head>
+<body>
+
+<div id="doc4" class="yui-t2">		
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+ <td colspan="2" valign="top">
+{{ partial "header-menu-main.html" . }}
+ </td>
+</tr>
+<tr>
+<td valign="top" style="width: 180px;">
+
+   {{ partial "nav-left-main.html" . }}
+   {{ partial "welcome.html" . }}
+   {{ partial "pacer.html" . }}
+</td>
+<td valign="top" style="padding: 0 10px 0 10px; width: 779px;">
+<div class="bd">
+<div class="yui-main"> 
+<div class="yui-b"> 
+<div style="width:779px; font-family:Arial,sans-serif; font-size:12px; border:0px">
+<div class="contentBody" style="padding-top: 10px;">
+
+  {{ with .Content }}
+  <div>{{ . }}</div>
+  {{ end }}
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top">
+   {{ partial "footer-main.html" . }}
+</td>
+</tr>
+</table>
+</div>
+

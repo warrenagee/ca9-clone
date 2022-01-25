@@ -1,0 +1,24 @@
+---
+label: Inmates with Pending Execution Dates
+hide_body: false
+fields:
+- name: layout
+  type: text
+  config:
+    required: false
+  label: layout
+- name: title
+  type: text
+  config:
+    required: false
+  label: title
+- name: case_number
+  type: text
+  config:
+    required: false
+  label: case_number
+- name: date
+  type: text
+  config:
+    required: false
+  label: Date

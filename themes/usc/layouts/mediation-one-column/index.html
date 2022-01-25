@@ -1,0 +1,123 @@
+{{ $.Scratch.Add "headerImage" "nav-top-main.jpg" }}
+
+{{ partial "header-mediation.html" . }}
+
+<title>{{ .Title }}</title>
+<script>
+
+$(document).ready(function(){
+  $("#mailto").hover(function(){
+    $(this).css("text-decoration", "underline");
+    }, function(){
+    $(this).css("text-decoration", "none");
+  });
+});
+</script>
+
+<style>
+
+body{
+    
+    font-family: 'times new roman', times, serif;
+    color: #000;
+    font-size: 20px;
+
+}
+
+p { padding: 10px 0 10px 0; margin: 0;}
+
+.processZZ h2{
+    color: red;
+   margin-bottom: 0 !important;
+   padding-bottom: 0 !important;
+}
+
+#mailto{
+    color: #000;
+    font-size:18px;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+li {
+    padding-bottom: 10px;
+
+}
+
+.custom-menu{
+
+        width: 250px;
+        border-right: 1px solid #D5D8DC;
+        border-bottom: 1px solid #D5D8DC;
+        font-size: 16px;
+}
+
+
+.custom-menu ul, .custom-menu li{
+        margin: 0;
+        padding: 0;
+}
+
+.custom-menu li{
+        font-size: 16px;
+        list-style: none;
+        font-weight: bold;
+}
+.custom-menu ul{
+
+        text-align: left;
+
+}
+.custom-menu a:link, a:active, a:visited{
+        text-decoration: none;
+        font-size: 16px;
+	color: #000;
+}
+
+.custom-menu a:hover{
+
+        text-decoration: none;
+        font-size: 16px;
+	color: #000;
+}
+
+</style>
+
+
+</head>
+
+<body>
+
+<div style="margin: 0 auto; width: 974px;">
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+ <td valign="top">
+{{ partial "header-menu-main.html" . }}
+ </td>
+</tr>
+<tr>
+<td valign="top" style="width: 974px; padding: 0 0 0 0px; text-align: left;">
+<h1 style="padding-top: 0; margin-top:10px;">{{ .Title }}</h1>
+<div style="border-top: 1px solid #D5D8DC; margin: 5px 0 10px 0; width: 100%;"></div>
+<div class="mediation">
+
+  {{ with .Content }}
+  <div>{{ . }}</div>
+  {{ end }}
+
+</div>
+</td>
+</tr>
+<tr>
+<td valign="top" align="center">
+		<br><br>
+{{ partial "footer-mediation.html" . }}
+                <br><br>
+</td>
+</tr>
+</table>
+</div>

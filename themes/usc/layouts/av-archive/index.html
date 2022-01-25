@@ -1,0 +1,58 @@
+{{ $.Scratch.Add "headerImage" "nav-top-main.jpg" }}
+{{ partial "header-main.html" . }}
+<title></title>
+<style>
+  h2{color: #000 !important;}
+  h3{color: #000 !important;}
+</style>
+
+<style>
+.av-title{ font-size: 13px; font-weight: bold; padding: 5px; width: 175px; text-align: right;}
+.av-content{font-size: 13px; padding: 5px; text-align: left;}
+
+</style>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.268.1.min.js"></script>
+<script src="https://circ9-static-web-assets.s3.us-west-1.amazonaws.com/js/media-archive.js"></script>
+
+</head>
+<body>
+
+<div id="doc4" class="yui-t2">		
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+ <td colspan="2" valign="top">
+{{ partial "header-menu-main.html" . }}
+ </td>
+</tr>
+<tr>
+<td valign="top" style="width: 180px;">
+
+   {{ partial "nav-left-main.html" . }}
+   {{ partial "welcome.html" . }}
+   {{ partial "pacer.html" . }}
+</td>
+<td valign="top" style="padding: 0 10px 0 10px; width: 779px;">
+<div class="yui-main"> 
+<div class="yui-b"> 
+<div style="width:779px; font-family:Arial,sans-serif; font-size:12px; border:0px">
+<div id="contentBody" style="text-align: left; padding-top: 10px;">
+
+  {{ with .Content }}
+  <div>{{ . }}</div>
+  {{ end }}
+
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top">
+   {{ partial "footer-main.html" . }}
+</td>
+</tr>
+</table>
+</div>
+

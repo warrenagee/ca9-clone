@@ -1,0 +1,349 @@
+{{ partial "header-home-page.html" . }}
+{{ $.Scratch.Add "headerImage" "nav-top-main.jpg" }}
+
+<title>{{ .Title }}</title>
+<style>
+
+#container-table{
+   width: 100%;
+}
+
+#stream-box li{
+   padding-bottom: 15px;
+}
+
+#container-table td{
+   width: 50%;
+}
+
+.data-table{
+   width: 100%;
+   margin-bottom: 10px;
+}
+
+.data-table th{
+   width: 100%;
+   text-align: left;
+   border: 2px solid #E0D7B7;
+   background-color: #fff;
+}
+
+.data-table td{
+   border: 2px solid #E0D7B7;
+   font: 14px Arial, Helvetica, sans-serif;
+}
+.black a:link,.black a:active,.black a:visited,.black div{
+	background: none;
+	color: #000;
+	font-size: 14px;
+	font-family: Tahoma,Sans-Serif;
+	text-decoration: none;
+}
+.black a:hover{
+	background: none;
+	color: #000;
+	font-size: 14px;
+	font-family: Tahoma,Sans-Serif;
+	text-decoration: underline;
+	li: margin 4px 2px;
+}
+
+.contentTitleBox{
+  border-bottom: 1px solid #e5d294;
+  border-top: 1px solid #e5d294;
+  background-color: #F4E8C1; 
+  height:2.5em; 
+  padding:4px 0px 0px 10px; 
+  font-size:16px; 
+  font-weight:bold; 
+  font-style:normal;color:#3f3f3f;
+}
+
+.newslinks{
+   margin-bottom: 10px;
+}
+
+.newslinks a{
+   border:1px solid #eeeeee !important;
+   text-decoration: none;
+   color: #003399;
+   font-size: 13px; 
+   font-weight: bold;
+}
+
+.newslinks a:hover{
+   text-decoration: underline;
+}
+
+.anno-redbg{
+    background-color: #ff0000;
+}
+.anno-whitefont{
+    color: #ffffff;
+}
+
+.anno-redfont{
+    color: #ffffff;
+}
+
+.anno-pad5{
+    padding: 5px;
+}
+
+</style>
+</head>
+<body>
+<div id="doc4" class="yui-t2">
+<table cellpadding="0" cellspacing="0">
+<tr>
+ <td colspan="3" valign="top">
+{{ partial "header-menu-main.html" . }}
+ </td>
+</tr>
+<tr>
+<td valign="top">
+
+   {{ partial "nav-left-main.html" . }}
+   {{ partial "welcome.html" . }}
+   {{ partial "pacer.html" . }}
+</td>
+<td valign="top" style="padding: 0 10px 0 10px;">
+
+<div>
+   <div id="number_slideshow" class="number_slideshow" style="width:573px;height:250px;padding-bottom:8px;">
+
+    <ul>
+
+           {{ range  (sort (where .Site.RegularPages "Section" "rotator") ".Params.date" "desc") }}
+
+
+    <li>
+
+<a href="{{ .Params.destination_link }}"><img src="{{ .Params.image_link }}" width="573" height="250" alt="{{ .Params.title }}"></a>
+
+
+    </li>
+
+           {{ end }}
+
+
+     </ul>
+
+      <ul class="number_slideshow_nav">
+
+	   {{ $counter := 0 }}
+
+           {{ range  (sort (where .Site.RegularPages "Section" "rotator") ".Params.date" "desc") }}
+
+	        {{ if gt (len ".Params.destination_link" ) 5 }}
+
+                     {{ $counter = add $counter 1 }}
+
+	             <li><a href="#">{{ $counter }}</a></li> 
+
+
+		{{ end }}
+
+          {{ end }}
+
+
+      </ul>
+   </div>
+</div>
+
+
+
+<!-- //////// -->
+
+<table id="container-table">
+    <tr>
+        <td valign="top">
+<!-- ---------------------- -->
+
+<table class="data-table">
+    <tr>
+                <th>
+<div class="contentTitleBox" style="padding-top: 15px;height:2em;">&nbsp;Cases of Interest<a href="/cases-of-interest/index.xml" target="_blank" onmouseover="return overlib('Link to our syndicated Cases of Interest feed here.', MOUSEOFF);" onmouseout="return nd();"><img src="//circ9-static-web-assets.s3.us-west-1.amazonaws.com/images/feed-icon-14x14.png" width="14" height="14" border="0" hspace="6" align="absmiddle"></a></div>
+
+        </th>
+     </tr>
+    <tr>
+                <td>
+                            <ul class="black">
+
+ 			{{ range  (sort (where .Site.RegularPages "Section" "cases-of-interest") ".Params.date" "desc") }}
+
+                     <li style="padding-bottom: 10px;">
+
+               <a href="/cases-of-interest/{{.File.BaseFileName}}">({{ dateFormat "01/02/06" .Params.date }}) {{.Title}}</a> 
+
+                    </li>
+                 {{ end }}
+
+                            </ul>
+
+        </td>
+      </tr>
+</table>
+
+<!-- ------------------------ -->
+
+
+<table class="data-table">
+    <tr>
+	<th>
+		<div class="contentTitleBox">Live Video Streaming of Oral Arguments and Events</div>
+        </th>
+     </tr>
+    <tr>
+       <td>
+	
+	<ul>
+
+
+ {{ range (where (where .Site.RegularPages "Section" "media") ".Params.streaming" "1"  ) }}
+
+                   <li style="padding-bottom: 10px;">
+                        <p class="black">
+                        {{.Content}}
+                        </p>
+                   </li>
+
+		{{ end }}
+
+	</ul>
+
+        </td>
+     </tr>
+</table>
+
+<!-- --------------------- -->
+
+</td><td style="width: 5px;"><div style="width: 10px;"></div></td><td style="width:50%" valign="top">
+
+<!-- ---------------------- -->
+
+<table class="data-table">
+            <tr>
+                <th>
+
+   <div class="contentTitleBox" style="padding-top: 15px;height:2em;">&nbsp;Announcements <a href="/announcements/index.xml" target="_blank" onMouseOver="return overlib('Link to our syndicated Announcements feed here.', MOUSEOFF);" onMouseOut="return nd();"><img src="//circ9-static-web-assets.s3.us-west-1.amazonaws.com/images/feed-icon-14x14.png" width="14" height="14" border="0" hspace="6" align="absmiddle"></a> </div>
+
+                </th>
+             </tr>
+            <tr>
+                <td>
+
+                <ul>
+
+
+            {{ range (where .Site.RegularPages "Section" "announcements") }}
+
+
+                <li style="padding-bottom: 10px;">
+
+                         <div class="black">
+
+                {{ $var1 := .Params.link }}
+                {{ $var2  := .File.TranslationBaseName }}
+                {{ $var3 := .Params.Title }}
+
+                {{ with .Params.link }}
+
+                        <a href='{{ $var1 }}'>{{ $var3 }}</a>
+
+                {{ else }}
+
+                        <a href='{{ .Site.BaseURL }}announcements/{{ $var2 }}'>{{ $var3 }}</a>
+
+                {{ end }}
+
+
+                </li>
+            {{ end }}
+
+
+            </ul>
+		</td>
+             </tr>
+        </table>
+
+
+<!-- ---------------------- -->
+
+
+
+
+<table class="data-table">
+    <tr>
+                <th>
+<div class="contentTitleBox">Inmates with Pending Execution Dates</div>
+
+        </th>
+     </tr>
+    <tr>
+      <td>
+         <ul class="black">
+
+
+           {{ range  (sort (where .Site.RegularPages "Section" "pending-execution-dates") ".Params.date" "desc") }}
+
+
+                    {{ if ( gt ( len .Params.title ) 0 ) }}
+
+                        <li style="padding-bottom: 10px;">
+
+   <a href="/pending-execution-dates/{{.File.BaseFileName}}">{{.Title}}</a>
+
+                        </li>
+
+
+                {{ else }}
+                    There are no pending execution dates.
+                {{ end }}
+
+	{{ end}}
+
+
+      	</ul>
+
+         </td>
+
+      </tr>
+
+</table>
+
+<!-- ---------------------- -->
+
+</td></tr></table>
+
+<!-- //////// -->
+
+
+</td>
+<td valign="top">
+ 
+
+<table>
+  <tr>
+    <td>
+
+	{{ partial "news.html" . }}
+
+
+       </td>
+     </tr>
+</table>
+
+<br>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="3" valign="top">
+   {{ partial "footer-main.html" . }}
+</td>
+</tr>
+</table>
+</div>

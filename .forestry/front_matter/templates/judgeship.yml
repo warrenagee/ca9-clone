@@ -1,0 +1,41 @@
+---
+label: Judgeship
+hide_body: false
+fields:
+- name: layout
+  type: text
+  config:
+    required: true
+  label: layout
+  hidden: true
+  default: index
+- name: type
+  type: text
+  config:
+    required: true
+  label: type
+  hidden: true
+  default: main-two-column
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+- name: link
+  type: text
+  config:
+    required: true
+  label: Link
+  hidden: false
+- name: date
+  type: datetime
+  label: Date
+  description: ''
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+  default: now
+pages:
+- content/judgeship/bankruptcy-judgeship-opportunity-district-of-nevada-reno.md

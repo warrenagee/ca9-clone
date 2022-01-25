@@ -1,0 +1,48 @@
+---
+label: Opinions
+hide_body: true
+fields:
+- name: case_name
+  type: text
+  config:
+    required: false
+  label: Case Name
+- name: case_num
+  type: text
+  config:
+    required: false
+  label: Case Number
+- name: case_origin
+  type: text
+  config:
+    required: false
+  label: Case Origin
+- name: authoring_judge
+  type: text
+  config:
+    required: false
+  label: Authoring Judge
+- name: case_type
+  type: text
+  config:
+    required: false
+  label: Case Type
+- name: case_code
+  type: text
+  config:
+    required: false
+  label: Case Code
+- name: date_filed
+  type: text
+  config:
+    required: false
+  label: Date Filed
+- name: pdf
+  type: file
+  config:
+    maxSize: 64
+  label: PDF
+pages:
+- test123456-1.md
+- test123456-2.md
+- test123456.md

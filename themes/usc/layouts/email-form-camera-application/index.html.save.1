@@ -1,0 +1,276 @@
+{{ $.Scratch.Add "headerImage" "nav-top-main.jpg" }}
+{{ partial "header-main.html" . }}
+{{ partial "email-form-jquery.html" . }}
+<title>{{ .Title }}</title>
+
+<script>
+
+function resetForm(){
+   var validator = $( "#contactForm" ).validate();
+   validator.resetForm();
+   document.getElementById('contactForm').reset();
+}
+
+
+$(function() {
+  $("form[name='contactForm']").validate({
+    rules: {
+
+      caseName: "required",
+      caseNum:  "required",
+      argDate: "required",
+      argLoc: "required",
+      name: "required",
+      email: {
+        required: true,
+        email: true
+      },
+      phone: {
+	required: true,
+        phoneUS: true
+      },
+      fax: {
+        phoneUS: true
+      },
+
+      date: "required"
+      
+
+
+
+
+
+    },
+
+    messages: {
+
+	caseName: "Please enter a Case Name",
+	caseNum: "Please enter a Case Number",
+	argDate: "Please enter an Argument Date",
+	argLoc:  "Please enter an Argument Location",
+	name:    "Please enter a name",
+	email:   "Please enter a valid email address",
+	phone:   "Please enter a valid phone number",
+	fax:     "Please enter a valid fax number",
+	date:    "Please enter a date"
+    },
+
+    submitHandler: function(form) {
+     submitToAPI(event);
+    }
+  });
+});
+
+function jquery_alert( title, message, width ) {
+    if ( !title )
+        title = 'Alert';
+
+    if ( !message )
+        message = 'No Message to Display.';
+
+    $('<div></div>').html( "<br>" + message ).dialog({
+        title: title,
+        width: width,
+        resizable: false,
+        modal: true,
+        buttons: {
+            'Close': function()  {
+                $( this ).dialog( 'close' );
+            }
+        }
+    });
+}
+
+function submitToAPI(e) {
+       e.preventDefault();
+
+       $('#activity_pane').showLoading();
+
+       var URL = "https://k0jvq7obl4.execute-api.us-east-1.amazonaws.com/camera-application";
+
+        var caseName     = $("#caseName").val();
+        var caseNum      = $("#caseNum").val();
+        var argDate      = $("#argDate").val();
+        var argLoc       = $("#argLoc").val();
+        var oralArg      = $("#oralArg").val(); 
+        var other1       = $("#other1").val(); 
+        var broadcast    = $("#broadcast").val(); 
+        var audioLive    = $("#audioLive").val(); 
+        var avBroadcast  = $("#avBroadcast").val(); 
+        var photo        = $("#photo").val(); 
+        var other2       = $("#other2").val(); 
+        var name         = $("#name").val(); 
+        var email        = $("#email").val(); 
+        var phone        = $("#phone").val(); 
+        var fax          = $("#fax").val();
+        var org          = $("#org").val();
+        var address      = $("#address").val();
+        var date         = $("#date").val();
+
+
+        var checker = $('#broadcast').is(':checked');
+        if(checker == true){broadcast = 'Yes';}else{broadcast = 'No';}
+
+        var checker = $('#audioLive').is(':checked');     
+        if(checker == true){audioLive = 'Yes';}else{AudioLive = 'No';} 
+
+        var checker = $('#avBroadcast').is(':checked');     
+        if(checker == true){avBroadcast = 'Yes';}else{avBroadcast = 'No';} 
+
+        var checker = $('#avBroadcast').is(':checked');     
+        if(checker == true){avBroadcast = 'Yes';}else{avBroadcast = 'No';} 
+
+
+
+
+        var data = {
+         caseName     : caseName,     
+         caseNum      : caseNum,
+         argDate      : argDate,
+         argLoc       : argLoc,  
+         oralArg      : oralArg,   
+         other1       : other1,
+         broadcast    : broadcast,
+         audioLive    : audioLive,
+         avBroadcast  : avBroadcast,
+         photo        : photo,
+         other2       : other2,
+         name         : name,
+         email        : email,
+         phone        : phone,
+         fax          : fax,
+         org          : org,
+         address      : address,
+         date         : date
+
+        };
+
+       $.ajax({
+
+         type: "POST",
+         url : "https://k0jvq7obl4.execute-api.us-east-1.amazonaws.com/camera-application",
+         dataType: "json",
+         crossDomain: "true",
+         contentType: "application/json; charset=utf-8",
+         data: JSON.stringify(data),
+
+         success: function () {
+           $('#activity_pane').hideLoading();
+           document.getElementById("contactForm").reset();
+           jquery_alert("Thank You!", "Your submission was successful.");
+         },
+         error: function () {
+         $('#activity_pane').hideLoading();      
+          jquery_alert("System Error", "We're sorry, there was a problem with your submission. Please try again. If the problem perists, please let us know, at webteam@ca9.uscourts.gov");
+
+         }});
+   }
+</script>
+<style>
+.form-group {
+  background: #f5f5f5;
+  color: #000;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
+  border-radius: 8px;
+  width: 500px;
+  padding: 0 20px;
+  margin: 20px 30px;
+  border:2px solid #448BC3;
+  font: 14px Arial, sans-serif;
+}
+#inputWrapper{
+  width: 300px;
+  margin: 0 auto;
+}
+#contactForm select, #contactForm textarea{
+  width: 300px;
+  
+}
+
+#contactForm label,
+#contactForm input[type='text']{
+  margin-bottom: 3px;
+  display: block;
+  width: 300px;
+}
+#contactForm input[type='text']{
+  border:1px solid #185E83
+  background: #fff;
+  color: #000;
+  padding: 0 6px;
+  font: 14px Verdana, arial, sans-serif;
+  margin-bottom: 40px;
+}
+#contactForm label{
+  font: 14px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+  color: #000;
+}
+#contactForm select{
+  margin-bottom: 40px;
+  font: 14px Verdana, arial, sans-serif;
+  color: #000;
+}
+#contactForm button {
+  background: #005395;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  width: 100px;
+  padding: 5px 0;
+  margin: 10px auto;
+  border-radius: 4px;
+}
+#contactForm .error {
+  color: #ff0000;
+}
+
+.ui-dialog .ui-dialog-buttonpane { 
+    text-align: center !important;
+}
+.ui-dialog .ui-dialog-buttonpane .ui-dialog-buttonset { 
+    float: none !important;
+}
+</style>
+
+</head>
+<body>
+
+<div id="doc4" class="yui-t2">		
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+ <td colspan="2" valign="top">
+{{ partial "header-menu-main.html" . }}
+ </td>
+</tr>
+<tr>
+<td valign="top" style="width: 180px;">
+
+   {{ partial "nav-left-main.html" . }}
+   {{ partial "welcome.html" . }}
+   {{ partial "pacer.html" . }}
+</td>
+<td valign="top" style="padding: 0 10px 0 10px; width: 779px;">
+<div class="yui-main"> 
+<div class="yui-b"> 
+<div style="width:779px; font-family:Arial,sans-serif; font-size:12px; border:0px">
+<div class="contentBody" style="padding-top: 10px;">
+
+  {{ with .Content }}
+  <div>{{ . }}</div>
+  {{ end }}
+
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top">
+   {{ partial "footer-main.html" . }}
+</td>
+</tr>
+</table>
+</div>

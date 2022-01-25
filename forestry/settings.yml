@@ -1,0 +1,179 @@
+---
+new_page_extension: md
+auto_deploy: false
+admin_path: static/admin
+webhook_url: 
+sections:
+- type: directory
+  path: ''
+  label: Test Folder
+  create: all
+  match: "**/*"
+  templates:
+  - opinions
+- type: document
+  path: content/test.md
+  label: test
+- type: directory
+  path: content/attorneys
+  label: Attorneys
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/announcements
+  label: Announcements
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/appellate-lawyer-representatives
+  label: Appellate lawyer representatives
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/bap
+  label: Bap
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/cases-of-interest
+  label: Cases of Interest
+  create: all
+  match: "*"
+- type: directory
+  path: content/calendar
+  label: Calendar
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/circuit-map
+  label: Circuit map
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/cmecf
+  label: Cmecf
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/district
+  label: District
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/employment
+  label: Employment
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/en-banc
+  label: En banc
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/forms
+  label: Forms
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/general
+  label: General
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/guides
+  label: Guides
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/information
+  label: Information
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/judicial-council
+  label: Judicial council
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/judgeship
+  label: Judgeship
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/library
+  label: Library
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/lawyer-representatives
+  label: Lawyer representatives
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/newsletters
+  label: Newsletters
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/news-media
+  label: News media
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/ninth-circuit-news
+  label: Ninth Circuit News
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/media
+  label: Media
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/mediation
+  label: Mediation
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/misconduct
+  label: Misconduct
+  create: all
+  match: "**/*"
+- type: directory
+  path: content
+  label: Pages
+  create: all
+  match: "*"
+- type: directory
+  path: content/pending-execution-dates
+  label: Pending Execution Dates
+  create: all
+  match: "**/*"
+  templates:
+  - inmates-with-pending-execution-dates
+- type: directory
+  path: content/rules
+  label: Rules
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/workplace-relations
+  label: Workplace relations
+  create: all
+  match: "**/*"
+upload_dir: ''
+public_path: ''
+front_matter_path: ''
+use_front_matter_path: 
+file_template: 'datastore/general/:year:/:month:/:day:/:filename:'
+build:
+  preview_env:
+  - HUGO_ENV=staging
+  - HUGO_VERSION=0.76.5
+  preview_output_directory: public
+  preview_docker_image: forestryio/hugo:latest
+  mount_path: "/srv"
+  working_dir: "/srv"
+  instant_preview_command: hugo server -D -E -F --port 8080 --bind 0.0.0.0 --renderToDisk
+    -d public
+version: 0.69.2

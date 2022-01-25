@@ -1,0 +1,30 @@
+{{ partial "header-district.html" . }}
+</head>
+<body>
+<div id="doc4" class="yui-t2">
+<table cellpadding="0" cellspacing="0">
+<tr>
+ <td colspan="3" valign="top">
+   {{ partial "header-menu-district.html" . }}
+ </td>
+</tr>
+<tr>
+<td valign="top" style="padding: 0; border: 0px solid blue; width: 170px;">
+   {{ partial "nav-left-district.html" . }}
+   {{ partial "pacer.html" .}}
+</td>
+<td valign="top" style="padding-left: 10px; border: 0px solid red; width: 590px">
+   {{ with .Content }}
+   <div>{{ . }}</div>
+   {{ end }}
+</td>
+<td valign="top" style="padding-left: 10px; width: 200px;">
+    {{ partial "news.html" . }}
+</td>
+</tr>
+<tr>
+<td colspan="3" valign="top">
+   {{ partial "footer-main.html" . }}
+</td>
+</tr>
+</table>

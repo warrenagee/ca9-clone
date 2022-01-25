@@ -1,0 +1,35 @@
+{{ partial "header-main.html" . }}
+</head>
+<body>
+<div id="doc4" class="yui-t2">
+<table cellpadding="0" cellspacing="0">
+<tr>
+ <td colspan="3" valign="top">
+   {{ partial "header-menu-library.html" . }}
+ </td>
+</tr>
+<tr>
+<td valign="top" style="width: 200px;">
+   {{ partial "nav-left-library.html" . }}
+   {{ partial "welcome.html" . }}
+   {{ partial "pacer.html" . }}
+</td>
+<td valign="top" style="padding: 0 15px 0 15px;">
+ <div class="contentbody" style="width: 565px; text-align: left;">
+  <h1>{{ .Page.Title }}</h1>
+  {{ with .Content }}
+  <div>{{ . }}</div>
+  {{ end }}
+</div>
+</td>
+<td valign="top" style="text-align: left;">
+   {{ partial "news.html" . }}
+</td>
+</tr>
+<tr>
+<td colspan="3" valign="top">
+   {{ partial "footer-library.html" . }}
+</td>
+</tr>
+</table>
+</div>

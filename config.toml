@@ -1,0 +1,70 @@
+baseURL = "https://dy08pdae2ui3e.cloudfront.net/ca9/public"
+buildDrafts = false
+contentDir = "content"
+languageCode = "en-us"
+layoutDir = "layouts"
+publishDir = "public"
+enableGitInfo = true
+theme = "usc"
+title = "United States Court of Appeals for the Ninth Circuit"
+
+[deployment]
+
+				# By default, files are uploaded in an arbitrary order.
+				# Files that match the regular expressions in the "Order" list
+				# will be uploaded first, in the listed order
+order = [".jpg$", ".gif$"]
+disableKinds = ["sitemap"]
+disablePathToLower = false
+
+
+[[deployment.targets]]
+				# An arbitrary name for this target.
+name = "Warren CA9 Test Site"
+				# The Go Cloud Development Kit URL to deploy to. Examples:
+				# GCS; see https://gocloud.dev/howto/blob/#gcs
+				# URL = "gs://<Bucket Name>"
+				# S3; see https://gocloud.dev/howto/blob/#s3
+				# For S3-compatible endpoints, see https://gocloud.dev/howto/blob/#s3-compatible
+
+
+URL = "s3://warren-hugo-test?region=us-west-2"
+
+
+				# Azure Blob Storage; see https://gocloud.dev/howto/blob/#azure
+				# URL = "azblob://$web"
+				
+				# You can use a "prefix=" query parameter to target a subfolder of the bucket:
+				# URL = "gs://<Bucket Name>?prefix=a/subfolder/"
+
+				# If you are using a CloudFront CDN, deploy will invalidate the cache as needed.
+
+				#cloudFrontDistributionID = ""
+		
+				# ... add more [[deployment.targets]] sections ...
+				
+				# [[deployment.matchers]] configure behavior for files that match the Pattern.
+				# Samples:
+
+
+[[deployment.matchers]]
+#  Cache static assets for 1 year.
+pattern = "^.+\\.(js|css|svg|ttf)$"
+cacheControl = "max-age=31536000, no-transform, public"
+gzip = false
+
+
+[[deployment.matchers]]
+pattern = "^.+\\.(png|jpg)$"
+cacheControl = "max-age=31536000, no-transform, public"
+gzip = false
+
+
+[outputFormats]
+  [outputFormats.html]
+    isPlainText = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

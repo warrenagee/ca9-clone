@@ -1,0 +1,52 @@
+---
+label: Announcements
+hide_body: false
+fields:
+- name: type
+  type: text
+  config:
+    required: false
+  label: Type
+  hidden: true
+  default: announcements-two-column
+- type: text
+  name: layout
+  label: Layout
+  default: index
+  hidden: true
+- type: text
+  name: title
+  label: Title
+  config:
+    max: 5000
+    required: true
+    min: 1
+- type: text
+  name: link
+  label: Link
+  description: Add a link here, or add body text, but <strong>not both</strong>. If
+    you have a link, then any body text is ignored.
+- name: date
+  type: datetime
+  label: Date
+  description: ''
+  config:
+    required: true
+    date_format: MM/DD/YYYY
+    time_format: 
+    display_utc: false
+  default: now
+- name: htmltitle
+  type: text
+  config:
+    required: false
+  label: html title
+  description: Leave this blank unless you have to have HTML in your announcement
+    title. If you use this, you still have to populate the title field.
+pages:
+- content/announcements/12.21.21-vaccination-requirements-for-staff-and-counsel-who-plan-to-appear-in-person-amended-to-include-a-requirement-for-boosters..md
+- content/announcements/announcement-9-30-21-core-operations-of-the-united-states-court-of-appeals-for-the-ninth-circuit-will-not-be-affected-immediately-by-any-shutdown-of-the-federal-government-that-may-commence-on-october-1-2021-should-congress-fail-to-take-the-actions-necessary-to-fund-the-government-for-fy-2022.oral-arguments-on-the-calendar-will-go-on-as-scheduled.all-deadlines-for-court-filings-remain-as-scheduled.if-at-some-point-it-does-become-necessary-to-limit-essential-activities-an-announcement-will-be-posted-on-this-website.md
+- content/announcements/court-expects-to-resume-in-person-hearings-for-attorneys-and-self-represented-parties-in-january-2022.md
+- content/announcements/ninth-circuit-will-expand-new-case-management-system-acms-to-include-sos-applications-as-of-january-2022.click-here-for-more-information.md
+- content/announcements/notice-update-for-court-operations-in-person-oral-arguments-suspended-for-january-2022.all-oral-arguments-in-january-will-proceed-remotely-by-video-conference.click-here.md
+- content/announcements/we-have-limited-staff-in-the-courthouse-due-to-the-current-public-health-crisis.md

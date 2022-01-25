@@ -1,0 +1,45 @@
+{{ partial "header-main.html" . }}
+<style>
+  h3{color: #000 !important;}
+  h2{color: #000 !important;}
+
+  p {padding: 10px 0 5px 0;
+  }
+
+  li {padding: 10px 0 10px 5px;
+  }
+
+</style>
+</head>
+<body>
+<div id="doc4" class="yui-t2">
+<table cellpadding="0" cellspacing="0">
+<tr>
+ <td colspan="2" valign="top">
+   {{ partial "header-menu-library.html" . }}
+ </td>
+</tr>
+<tr>
+<td valign="top" style="width: 200px;">
+   {{ partial "nav-left-library.html" . }}
+   {{ partial "welcome.html" . }}
+   {{ partial "pacer.html" . }}
+</td>
+<td valign="top" style="padding: 0 20px 0 20px;">
+ <div class="contentbody" style="width: 750px; text-align: left;">
+<h1>{{ .Title }}</h1>
+<div style="border-top: 1px solid #cc9900; margin: 5px 0 20px 0; width: 100%;"></div>
+
+  {{ with .Content }}
+  <div>{{ . }}</div>
+  {{ end }}
+</div>
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top">
+   {{ partial "footer-library.html" . }}
+</td>
+</tr>
+</table>
+</div>

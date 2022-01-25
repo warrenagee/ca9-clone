@@ -1,0 +1,60 @@
+---
+label: Announcements
+hide_body: false
+fields:
+- name: type
+  type: text
+  config:
+    required: false
+  label: Type
+  hidden: true
+  default: announcements-two-column
+- type: text
+  name: layout
+  label: Layout
+  default: index
+  hidden: true
+- type: text
+  name: title
+  label: Title
+  config:
+    max: 5000
+    required: true
+    min: 1
+- type: text
+  name: link
+  label: Link
+  description: Add a link here, or add body text, but <strong>not both</strong>. If
+    you have a link, then any body text is ignored.
+- name: date
+  type: datetime
+  label: Date
+  description: ''
+  config:
+    required: true
+    date_format: MM/DD/YYYY
+    time_format: 
+    display_utc: false
+  default: now
+- name: htmltitle
+  type: text
+  config:
+    required: false
+  label: html title
+  description: Leave this blank unless you have to have HTML in your announcement
+    title. If you use this, you still have to populate the title field.
+pages:
+- content/announcements/administrative-order-regarding-a-name-change.md
+- content/announcements/administrative-order-regarding-a-name-change.md
+- content/announcements/april-23-2021-court-of-appeals-implements-new-electronic-case-management-system-for-immigration-petitions-for-review.md
+- content/announcements/april-23-2021-court-of-appeals-implements-new-electronic-case-management-system-for-immigration-petitions-for-review.md
+- content/announcements/covid-updates-update-to-operational-changes.md
+- content/announcements/covid-updates-update-to-operational-changes.md
+- content/announcements/juneteenth-operating-status-on-june-18-2021.md
+- content/announcements/juneteenth-operating-status-on-june-18-2021.md
+- content/announcements/the-ninth-circuit-will-co-sponsor-a-free-virtual-program-on-september-2-2021-featuring-judge-margaret-mckeown-who-will-discuss-effective-brief-writing-and-oral-argument.cle-credit-pending-for-washington-state-only.click-here-for-details-and-to-register.md
+- content/announcements/the-ninth-circuit-will-co-sponsor-a-free-virtual-program-on-september-2-2021-featuring-judge-margaret-mckeown-who-will-discuss-effective-brief-writing-and-oral-argument.cle-credit-pending-for-washington-state-only.click-here-for-details-and-to-register.md
+- content/announcements/we-have-limited-staff-in-the-courthouse-due-to-the-current-public-health-crisis.md
+- content/announcements/we-have-limited-staff-in-the-courthouse-due-to-the-current-public-health-crisis.md
+- content/announcements/with-the-retirement-of-its-appellate-commissioner-court-reassigns-duties-and-hires-a-cja-administrator.md
+- content/announcements/with-the-retirement-of-its-appellate-commissioner-court-reassigns-duties-and-hires-a-cja-administrator.md

@@ -1,0 +1,176 @@
+{{ $.Scratch.Add "headerImage" "nav-top-main.jpg" }}
+{{ partial "header-main.html" . }}
+<title>{{ .Title }}</title>
+<link rel="stylesheet" href="https://cdn.ca9.uscourts.gov/assets/css/misconduct.css" type="text/css">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+<link href="//circ9-static-web-assets.s3.us-west-1.amazonaws.com/css/number_slideshow.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="//circ9-static-web-assets.s3.us-west-1.amazonaws.com/js/jquery-1.4.3.min.js"></script>
+<script type="text/javascript" src="//circ9-static-web-assets.s3.us-west-1.amazonaws.com/js/number_slideshow.js"></script>
+
+<style type="text/css" media="screen">
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Caption text */
+.text {
+  color: #000;
+  font-size: 15px;
+  font-weight:bold;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: -14px;
+  width: 100%;
+  text-align: center;
+  background-color: #fff;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 2px 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade !;
+  -webkit-animation-duration: 1.5s !;
+  animation-name: fade !;
+  animation-duration: 1.5s !;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+</style>
+	
+<!--<script language="javascript" type="text/javascript">  
+$(function(){ 
+   $("#number_slideshow").number_slideshow({  
+slideshow_autoplay: 'enable',//enable disable  
+slideshow_time_interval: '7000',  
+slideshow_window_background_color: "#ccc",  
+slideshow_window_padding: '1',  
+slideshow_window_width: '600',  
+slideshow_window_height: '308',  
+slideshow_border_size: '0',  
+slideshow_border_color: 'black',  
+slideshow_show_button: 'enable',//enable disable  
+slideshow_show_title: 'enable',  
+slideshow_button_text_color: '#000',  
+slideshow_button_background_color: '#FFF',  
+slideshow_button_current_background_color: '#c3cbcf',  
+slideshow_button_border_color: '#000',
+slideshow_loading_gif: '/images/naturalization/Slide_1_20190826_MT_LAD_0290.jpg',//loading pic position, you can replace it.
+slideshow_button_border_size: '1' 
+    });
+		   });
+ </script> -->
+
+</head>
+
+<body>
+
+<div id="doc4" class="yui-t2">		
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+ <td colspan="2" valign="top">
+{{ partial "header-menu-main.html" . }}
+ </td>
+</tr>
+<tr>
+<td valign="top" style="width: 180px;">
+
+   {{ partial "nav-left-main.html" . }}
+   {{ partial "welcome.html" . }}
+   {{ partial "pacer.html" . }}
+</td>
+<td valign="top" style="padding: 0 10px 0 10px; width: 779px;">
+<div class="yui-main"> 
+<div class="yui-b"> 
+<div style="width:779px; font-family:Arial,sans-serif; font-size:12px; border:0px">
+<h1>{{ .Title }}</h1>
+<div style="border-top: 1px solid #cc9900; padding-left: 5px; margin-bottom: 5px; padding-bottom: 0px; padding-top: 0px; width: 779px;"></div>
+<div class="contentBody" style="padding-top: 10px;">
+
+  {{ with .Content }}
+  <div>{{ . }}</div>
+  {{ end }}
+
+</div>
+</div>
+</div>
+</div>
+        <script>
+		var slideIndex = 0;
+		showSlides();
+		
+		function showSlides() {
+		  var i;
+		  var slides = document.getElementsByClassName("mySlides");
+		  var dots = document.getElementsByClassName("dot");
+		  for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";  
+		  }
+		  slideIndex++;
+		  if (slideIndex > slides.length) {slideIndex = 1}    
+		  for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";  
+		  dots[slideIndex-1].className += " active";
+		  setTimeout(showSlides, 4000); // Change image every 2 seconds
+		}
+		</script>
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top">
+   {{ partial "footer-main.html" . }}
+</td>
+</tr>
+</table>
+</div>
+

@@ -1,0 +1,85 @@
+{{ $.Scratch.Add "headerImage" "nav-top-main.jpg" }}
+{{ partial "header-main.html" . }}
+<title>{{ .Title }}</title>
+<link rel="stylesheet" href="https://cdn.ca9.uscourts.gov/assets/css/rewards.css" type="text/css">
+<link rel="stylesheet" href="https://cdn.ca9.uscourts.gov/assets/css/employment.css" type="text/css">
+</head>
+<body>
+
+<div id="doc4" class="yui-t2">		
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+ <td colspan="2" valign="top">
+{{ partial "header-menu-main.html" . }}
+ </td>
+</tr>
+<tr>
+<td valign="top" style="width: 180px;">
+
+   {{ partial "nav-left-main.html" . }}
+   {{ partial "welcome.html" . }}
+   {{ partial "pacer.html" . }}
+
+</td>
+<td valign="top" style="padding: 0 10px 0 10px; width: 779px;">
+<div class="yui-main"> 
+<div class="yui-b"> 
+<div style="width:779px; font-family:Arial,sans-serif; font-size:12px; border:0px">
+
+<table width="100%"><tr><td style="font-size: 18px; font-weight: bold; padding: 5px 0">
+{{ .Title }}
+</td><td style="font-size: 16px; font-weight: bold; text-align: right; padding: 5px 0">
+<a href="/workplace-relations">Workplace Relations</a>
+</td></tr></table>
+
+<div style="border-top: 1px solid #cc9900; padding-left: 5px; margin-bottom: 5px; padding-bottom: 0px; padding-top: 0px; width: 779px;"></div>
+<div class="contentBody" style="padding-top: 10px;">
+
+
+   {{ partial "employment-top.html" . }}
+
+   <div class="employmentPositions" style="margin-left: 20px; width: 747px;"><strong>Other Courts within the Ninth Circuit</strong></div>
+   <div style="padding-top: 15px;">
+
+    <ul>
+    
+    {{ range (where .Site.RegularPages "Section" "employment") }}
+	<li style="padding-bottom: 20px; list-style-type: none;">
+
+		<p style="margin-bottom: 5px;">
+		<a style="font-size: 120%; font-weight:bold" href="{{.Params.link}}">{{.Params.title}}</a>
+		</p>
+		<p style="font-size: 115%;">
+                Court-Unit - {{.Params.court_unit}}
+                <br />
+                Position Location - {{.Params.position_location}}
+                <br />
+                Closing Date - {{.Params.closing_date}}
+                <br />
+                Date Posted - {{dateFormat "01/02/06" .Params.date_posted}}
+                </p>
+
+	</li>            
+    {{ end }}
+
+    </ul>
+
+   </div>
+
+   {{ partial "employment-bottom.html" . }}
+
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top">
+   {{ partial "footer-main.html" . }}
+</td>
+</tr>
+</table>
+</div>
+

@@ -1,0 +1,184 @@
+{{ $.Scratch.Add "headerImage" "nav-top-main.jpg" }}
+{{ partial "header-main.html" . }}
+<title>{{ .Title }}</title>
+<style>
+  h2{color: #000 !important;}
+  h3{color: #000 !important;}
+</style>
+
+<!-- begin email form code -->
+<script src="https://cdn.ca9.uscourts.gov/web-assets/js/jquery/jquery-3.3.1.min.js" type="text/javascript"></script>        
+<script src="https://cdn.ca9.uscourts.gov/web-assets/js/jquery/jquery-ui.min.js" type="text/javascript"></script>                 
+<link rel="stylesheet" href="https://cdn.ca9.uscourts.gov/web-assets/js/jquery/jquery-ui.min.css" type="text/css">
+<script src="https://cdn.ca9.uscourts.gov/web-assets/js/jquery.showLoading.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.ca9.uscourts.gov/web-assets/css/waiting.css">
+
+<script>
+
+function jquery_alert( title, message, width ) {
+    if ( !title )
+        title = 'Alert';
+
+    if ( !message )
+        message = 'No Message to Display.';
+
+    $('<div></div>').html( "<br>" + message ).dialog({
+        title: title,
+        width: width,
+        resizable: false,
+        modal: true,
+        buttons: {
+            'Close': function()  {
+                $( this ).dialog( 'close' );
+            }
+        }
+    });
+}
+
+
+function submitToAPI(e) {
+       e.preventDefault();
+       $('#activity_pane').showLoading();
+
+       var URL = "https://16f7s13l1g.execute-api.us-east-1.amazonaws.com/hosted-visit";
+
+       var name = $("#name-input").val();
+       var phone = $("#phone-input").val();
+       var email = $("#email-input").val();
+       var desc = $("#description-input").val();
+       var data = {
+          name : name,
+          phone : phone,
+          email : email,
+          desc : desc
+        };
+
+       $.ajax({
+
+         type: "POST",
+         url : "https://16f7s13l1g.execute-api.us-east-1.amazonaws.com/hosted-visit",
+         dataType: "json",
+         crossDomain: "true",
+         contentType: "application/json; charset=utf-8",
+         data: JSON.stringify(data),
+
+         success: function () {
+	   $('#activity_pane').hideLoading();
+
+           document.getElementById("contact-form").reset();
+          
+           jquery_alert("Thank You!", "Your submission was successful.");
+
+         },
+         error: function () {
+	 $('#activity_pane').hideLoading();      
+          jquery_alert("System Error", "We're sorry, there was a problem with your submission. Please try again. If the problem perists, please let us know, at webteam@ca9.uscourts.gov");
+
+         }});
+   }
+
+
+</script>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans";
+  font-size: 14px;
+}
+
+.container {
+  width: 500px;
+  margin: 25px auto;
+}
+
+form {
+  padding: 20px;
+  background: #2c3e50;
+  color: #fff;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
+}
+form label,
+form input,
+form button {
+  border: 0;
+  margin-bottom: 3px;
+  display: block;
+  width: 100%;
+}
+form input {
+  height: 25px;
+  line-height: 25px;
+  background: #fff;
+  color: #000;
+  padding: 0 6px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+form button {
+  height: 30px;
+  line-height: 30px;
+  background: #e67e22;
+  color: #fff;
+  margin-top: 10px;
+  cursor: pointer;
+}
+form .error {
+  color: #ff0000;
+}
+</style>
+
+
+<!-- end email form code -->
+
+</head>
+<body>
+
+<div id="doc4" class="yui-t2">		
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+ <td colspan="2" valign="top">
+{{ partial "header-menu-main.html" . }}
+ </td>
+</tr>
+<tr>
+<td valign="top" style="width: 180px;">
+
+   {{ partial "nav-left-main.html" . }}
+   {{ partial "welcome.html" . }}
+   {{ partial "pacer.html" . }}
+</td>
+<td valign="top" style="padding: 0 10px 0 10px; width: 779px;">
+<div class="yui-main"> 
+<div class="yui-b"> 
+<div style="width:779px; font-family:Arial,sans-serif; font-size:12px; border:0px">
+<h1>{{ .Title }}</h1>
+<div style="border-top: 1px solid #cc9900; padding-left: 5px; margin-bottom: 5px; padding-bottom: 0px; padding-top: 0px; width: 779px;"></div>
+<div class="contentBody" style="padding-top: 10px;">
+
+  {{ with .Content }}
+  <div>{{ . }}</div>
+  {{ end }}
+
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top">
+   {{ partial "footer-main.html" . }}
+</td>
+</tr>
+</table>
+</div>
+

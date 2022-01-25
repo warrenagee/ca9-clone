@@ -1,0 +1,112 @@
+{{ partial "header-main.html" . }}
+{{ $.Scratch.Add "headerImage" "nav-top-main.jpg" }}
+
+<title>{{ .Title }}</title>
+
+<style>
+#container-table{
+   width: 100%;
+}
+.newslinks{
+   margin-bottom: 10px;
+}
+.newslinks a{
+   border:1px solid #eeeeee !important;
+   text-decoration: none;
+   color: #003399;
+   font-size: 13px; 
+   font-weight: bold;
+}
+.newslinks a:hover{
+   text-decoration: underline;
+}
+
+</style>
+
+</head>
+<body>
+<div id="doc4" class="yui-t2">
+<table cellpadding="0" cellspacing="0">
+<tr>
+ <td colspan="3" valign="top">
+{{ partial "header-menu-main.html" . }}
+ </td>
+</tr>
+<tr>
+<td valign="top">
+
+   {{ partial "nav-left-main.html" . }}
+   {{ partial "welcome.html" . }}
+   {{ partial "pacer.html" . }}
+</td>
+
+<td style="padding-left: 15px; padding:right: 1px; width: 575px;" valign="top">
+
+
+<h1>{{ .Title }}</h1>
+
+<div style="border-top: 1px solid #cc9900; padding-left: 10px; margin-bottom: 15px; width: 500px;"></div>
+
+<table style="width: 575px;">
+
+            <tr>
+                <td style="background-color: #fff; padding: 10px; color: #000; font-size: 14px;">
+
+        {{ range (where .Site.RegularPages "Section" "ninth-circuit-news") }}
+           <p style="margin-bottom: 30px; font-size: 17px;">
+
+        {{ $var1 := .Params.link }}
+        {{ $var2  := .File.TranslationBaseName }}
+        {{ $var3 := .Params.Title }}
+
+        {{ if lt (sub (now.Unix) (.Lastmod.Unix)) 1209600 }}            
+             <img src="https://cdn.ca9.uscourts.gov/assets/images/button_NEW_dark-red.gif">               
+        {{ end }}
+
+        {{ with .Params.link }}
+
+            <a style="text-decoration: none; font-weight: bold;" href='{{ $var1 }}'>{{ $var3 }}</a><br />
+
+        {{ else }}
+
+            <a style="text-decoration: none; font-weight: bold;" href='{{ .Site.BaseURL }}ninth-circuit-news/{{ $var2 }}'>{{ $var3 }}</a><br />
+
+        {{ end }}
+	
+        {{ .Params.date.Format "January 2, 2006" }}
+            </p>
+        {{ end }}
+
+
+                 </td>
+             </tr>
+        </table>
+
+</td>
+<td valign="top">
+ 
+
+<table>
+  <tr>
+    <td>
+
+	{{ partial "news.html" . }}
+
+
+       </td>
+     </tr>
+</table>
+
+<br>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="3" valign="top">
+   {{ partial "footer-main.html" . }}
+</td>
+</tr>
+</table>
+</div>
+© 2021 GitHub, Inc.

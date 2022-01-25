@@ -1,0 +1,250 @@
+{{ $.Scratch.Add "headerImage" "nav-top-main.jpg" }}
+{{ partial "header-main.html" . }}
+{{ partial "spry.html" . }}
+{{ partial "dynamodb.html" . }}
+<title>{{ .Title }}</title>
+<script src="https://cdn.ca9.uscourts.gov/assets/js/dynamodb-search-memoranda-20210812.js"></script>
+  <script>
+  $( function() {
+    $( "#short_date-index" ).datepicker({ dateFormat: 'mm/dd/yy' });
+  } );
+  </script>
+</head>
+<body>
+
+<div id="doc4" class="yui-t2">		
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+ <td colspan="2" valign="top">
+{{ partial "header-menu-main.html" . }}
+ </td>
+</tr>
+<tr>
+<td valign="top" style="width: 180px;">
+
+   {{ partial "nav-left-main.html" . }}
+   {{ partial "welcome.html" . }}
+   {{ partial "pacer.html" . }}
+</td>
+<td valign="top" style="padding: 0 10px 0 10px; width: 779px;">
+<div class="yui-main"> 
+<div class="yui-b"> 
+<div style="width:779px; font-family:Arial,sans-serif; font-size:12px; border:0px">
+<h1>{{ .Title }}</h1>
+
+<div style="border-top: 1px solid #cc9900; padding-left: 5px; margin-bottom: 5px; padding-bottom: 0px; padding-top: 10px; width: 779px;"></div>
+<div class="contentBody" style="padding-left: 10px;">
+
+
+	<span style="font-weight: bold; font-size:15px; color: #000000;">Log of Unpublished Dispositions</span>
+	<br>
+	<p style="padding-top: 5px;"><span style="font-size: small;"><b>Opinions are ordinarily posted to this website by 10:00 am Pacific Time. Memorandum Dispositions are posted up until 4:00 pm Pacific Time.</b> There is no charge to view or download these documents from our website. Please note that opinions and dispositions are also available from the PACER system shortly before they are posted to this site. PACER is a fee based system. Click <a href="http://www.pacer.gov/psc/efaq.html#CMECF" target="_blank">here</a> to open a PACER account and find out more about fees. PACER account holders may register as non-party users of the court's Appellate ECF system to obtain immediate email notification of the filing of opinions and dispositions in specific cases. Click <a href="http://www.pacer.gov/psc/efaq.html#CMECF" target="_blank">here</a> to register as a non-party user. To automatically receive a free list of all opinions filed each day, click <a href="/memoranda/recent/index.xml" target="_parent">here</a> to subscribe to the court's daily RSS feed.</span></p>
+
+	<p><strong><span style="font-size: small;">For Unpublished Dispositions posted December 8, 2008 to November 10, 2009 </span><a href="http://www.ca9.uscourts.gov/memoranda_archive/"><span style="font-size: small;">click here</span></a><span style="font-size: small;">.</span></strong></p>
+	<div class="memorandaArchiveBox"><strong><span style="font-size: small;">Please contact the clerk's office at 415-355-8000 to find out how to obtain an unpublished&nbsp;disposition filed before 2008.</span></strong></div>
+	<br>
+
+	<div style="text-align: center;">
+
+	<h2><a style="text-decoration: none;" href="/rss/">RSS feed available&nbsp;<img src="https://cdn.ca9.uscourts.gov/assets/images/feed-icon-14x14.png" hspace="6" align="absmiddle"></a></h2>
+
+	<div id="search" style="margin-top: -10px;">
+	<div id="opinions_search"  style="padding-top: 5px;">
+
+	  <div id="CollapsiblePanel1" class="CollapsiblePanel" style="margin-top:10px;">
+	     <div class="memoranda-CollapsiblePanelTab" tabindex="0" style="cursor: pointer; padding: 10px !important; color: #ffffff; text-decoration: underline;">Click for Case Code Glossary</div>
+
+	     <div class="CollapsiblePanelContent">
+	          <table width="780px" cellpadding="2" cellspacing="2" border="0">
+	               <tr>
+	               <td valign="top" class="codekey_label">
+	                    <span class="codekey_title">*:</span> immediate filing
+	                    <br>
+	                    <span class="codekey_title">ad:</span> amended dissent
+	                    <br>
+	                    <span class="codekey_title">ao:</span> amended opinion
+	                    <br>
+	                    <span class="codekey_title">app:</span> appendix
+	                    <br>
+	                    <span class="codekey_title">cd:</span> concurrence/dissent
+	                    <br>
+	                    <span class="codekey_title">co:</span> corrected opinion
+	               </td>
+	               <td valign="top" class="codekey_label">
+	                    <span class="codekey_title">eb:</span> en banc
+	                    <br>
+	                    <span class="codekey_title">ebo:</span> en banc order
+	                    <br>
+	                    <span class="codekey_title">ebop:</span> en banc opinion
+	                    <br>
+	                    <span class="codekey_title">o2:</span> second opinion
+	                    <br>
+	                    <span class="codekey_title">o:</span> order
+	                    <br>
+	                    <span class="codekey_title">oa:</span> order amending
+	               </td>
+	               <td valign="top" class="codekey_label">
+	                    <span class="codekey_title">oad:</span> order amended dissent
+	                    <br>
+	                    <span class="codekey_title">oam:</span> order and amended memorandum
+	                    <br>
+	                    <span class="codekey_title">oap:</span> order and amended opinion
+	                    <br>
+	                    <span class="codekey_title">oop:</span> order & opinion
+	                    <br>
+	                    <span class="codekey_title">s:</span> supplemental opinion
+	                    <br>
+	                    <span class="codekey_title">sd:</span> supplemental dissent
+	               </td>
+	               </tr>
+	          </table>
+	     </div>
+	</div>
+
+	<div id="search-container">
+	<div id="search">
+
+		<input type="hidden" id="table" value="memoranda">
+	        <input type="hidden" id="projection_expression" value="file_name,case_name,case_num,case_origin,case_panel,case_type,case_code,short_date,publish">
+		<input type="hidden" class="fields" id="date_filed" value="">
+	        <input type="hidden" id="operator" value="and">
+		<table class="memoranda" id="search-data-table" align="center">
+		<tr>
+		<th colspan="3">
+		Search Memoranda
+		</th>
+		</tr>
+		<tr>
+		<td style="padding-left: 40px;">
+		Case Title:<br>
+		<input type="text" class="fields" id="case_name_lc" value="">
+		</td>
+		<td>
+		Case No:<br>
+		<input type="text" class="fields" id="case_num-index" value="">
+		</td>
+	        <td>
+	        Case Origin:<br>
+	        <input type="text" class="fields" id="case_origin_lc" value="">
+	        </td>
+		</tr>
+		<tr>
+	        <td style="padding-left: 40px;">
+	        Date Filed (mm/dd/yyyy):<br>
+	        <input type="text" class="fields" id="short_date-index" value="">
+	        </td>
+	        <td>
+	        Case Panel:<br>
+	        <input type="text" class="fields" id="case_panel_lc" value="">
+		</td>
+		<td>
+		Case Type:<br>
+		<select class="fields" id="case_type-index">
+		<option value="">Select</option>
+		<option value="1292(b) Petition" >1292(b) Petition</option><option value="1453(c) Petition" >1453(c) Petition</option><option value="158(d) Petition" >158(d) Petition</option><option value="23(f) Petition" >23(f) Petition</option><option value="Agency" >Agency</option><option value="Bankruptcy" >Bankruptcy</option><option value="Civil" >Civil</option><option value="Criminal" >Criminal</option><option value="Frap 9(a)" >Frap 9(a)</option><option value="Habeas" >Habeas</option><option value="Judicial Misconduct" >Judicial Misconduct</option><option value="Original Proceeding" >Original Proceeding</option><option value="Prisoner" >Prisoner</option><option value="Prisoner Death Penalty" >Prisoner Death Penalty</option><option value="Tax Court" >Tax Court</option>
+		</td>
+		</tr>
+		<tr>
+		<td style="border-right: 0;">&nbsp;</td>
+		<td style="border-left: 0; border-right: 0; text-align: center;">
+
+        <table align="center">
+            <tr>    
+            <td style="border: 0;"><div id="activity_pane"></div>
+            </td>
+            <td style="vertical-align: top; border: 0; padding: 10px;">
+		<input class="search-submit-button" id="ssearchButton" type="button" value="Search" onclick="dynamodbSearch('search');">
+            </td>
+            <td style="vertical-align: top;border: 0px solid green; padding: 10px;">  
+
+                <input class="search-submit-button" type="button" onClick="location.reload();" value="Clear">
+
+                </td> 
+                <td style="border: 0;">
+
+            </td>
+            </tr>
+            </table>
+
+
+
+
+
+
+		</td>
+		<td style="border-left: 0;">&nbsp;</td>
+		</tr>
+		</table>
+		
+		
+	</div>
+	</div>
+
+	</div>
+	</div>
+	</div>
+	<br>
+
+<div id="resultTable">
+
+<table align="center" class="opinions" id="search-results-table">
+<tr class="dynamodb-table-header-links">
+<th>Case&nbsp;Title</th>
+<th>Case&nbsp;No.</th>
+<th>Case&nbsp;Panel</th>
+<th>Case&nbsp;Origin</th>
+<th>Case&nbsp;Type</th>
+<th>Code</th>
+<th>Date&nbsp;filed</th>
+</tr>
+
+            {{ range  (sort (where .Site.RegularPages "Section" "memoranda") ".Params.memoranda_sort") }}
+
+			<tr>
+			<td><a href="{{ .Params.link }}">{{ .Title }}</a></td>
+                        <td>{{ .Params.case_num }}</td>
+                        <td>{{ .Params.case_panel }}</td>
+                        <td>{{ .Params.case_origin }}</td>
+                        <td>{{ .Params.case_type }}</td>
+                        <td>{{ .Params.case_code }}</td>
+                        <td>{{ .Params.date_filed }}</td>
+			</tr>
+
+
+            {{ end }}
+
+   <tr><td colspan='7' style='background-color: #EEEEEE; text-align: center; padding: 10px;'>                           
+   <div id='more_activity_pane'></div>More records available. 
+   <span style='color: blue; font-weight: bold; text-decoration: underline; cursor: pointer;'
+   onClick='dynamodbSearch("staticMore")'>Click here</span> to see them</td></tr>   
+
+
+</table>
+</div>
+<script type="text/javascript">
+                var CollapsiblePanel1 = new Spry.Widget.CollapsiblePanel("CollapsiblePanel1", {contentIsOpen:false});
+</script>
+
+
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td>
+<td colspan="1" valign="top">
+<p>
+<br>
+<div style="color: gray; font-size: 12px; text-align: center;">Page last updated: {{ partial "memoranda-current-date-time.html" . }}</div>
+<br>
+{{ partial "spry.html" . }}
+</p>
+   {{ partial "footer-main.html" . }}
+</td>
+</tr>
+</table>
+</div>
+

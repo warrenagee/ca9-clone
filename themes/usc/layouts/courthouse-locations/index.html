@@ -1,0 +1,49 @@
+{{ $.Scratch.Add "headerImage" "nav-top-main.jpg" }}
+
+{{ partial "header-courthouse-locations.html" . }}
+<title>{{ .Title }}</title>
+</head>
+<body>
+
+<div id="doc4" class="yui-t2">		
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+ <td colspan="2" valign="top">
+{{ partial "header-menu-main.html" . }}
+ </td>
+</tr>
+<tr>
+<td valign="top" style="text-align: left; width: 180px;">
+
+   {{ partial "nav-left-main.html" . }}
+   {{ partial "welcome.html" . }}
+   {{ partial "pacer.html" . }}
+</td>
+<td valign="top" style="padding: 0 10px 0 10px; width: 797px;">
+<h1>{{ .Title }}</h1>
+<div style="border-top: 1px solid #cc9900; padding-left: 5px; margin-bottom: 5px; padding-bottom: 0px; padding-top: 0px; width: 779px;"></div>
+
+<div style="width:600px; font-family:Arial,sans-serif; font-size:12px; border:0px; text-align: left;">
+<div class="yui-bx">
+
+<div class="contentBody" style="padding-top: 10px;">
+<div class="yui-bx">
+
+  {{ with .Content }}
+  <div>{{ . }}</div>
+  {{ end }}
+
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top">
+   {{ partial "footer-main.html" . }}
+</td>
+</tr>
+</table>
+</div>
+

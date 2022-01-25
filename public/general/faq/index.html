@@ -1,0 +1,603 @@
+
+<!DOCTYPE HTML>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=980" />
+
+
+<script src="https://cdn.ca9.uscourts.gov/assets/js/jquery/jquery-3.3.1.min.js" type="text/javascript"></script>        
+<script src="https://cdn.ca9.uscourts.gov/assets/js/jquery/jquery-ui.min.js" type="text/javascript"></script>                 
+<link rel="stylesheet" href="https://cdn.ca9.uscourts.gov/assets/js/jquery/jquery-ui.min.css" type="text/css">
+
+<style type="text/css">
+.maintext{ color: #000000; font: 10pt/11pt arial; text-decoration: none; text-align: left; }
+td.seniority { border:1px solid #cccccc;padding:.5em;   }
+td.seniority_title { border:1px solid #b1d2ce;padding:.5em;   }
+
+</style>
+
+<!-- InstanceBeginEditable name="doctitle" -->
+
+<!-- InstanceEndEditable -->
+
+<link rel="stylesheet" href="https://cdn.ca9.uscourts.gov/assets/css/newforms.css" type="text/css">
+
+<!-- overLIB (c) Erik Bosrup -->
+<script src="https://cdn.ca9.uscourts.gov/assets/js/overlib.js" type="text/javascript"></script>
+
+<!-- Source File -->
+<link rel="stylesheet" href="https://cdn.ca9.uscourts.gov/assets/yui/build/reset-fonts-grids/reset-fonts-grids.css" type="text/css">
+
+<!-- Default Global Style Sheet -->
+<link rel="stylesheet" href="https://cdn.ca9.uscourts.gov/assets/css/default_NinthCircuit.css" type="text/css">
+
+<!-- Skin CSS --> 
+<link rel="stylesheet" href="https://cdn.ca9.uscourts.gov/assets/yui/build/menu/assets/skins/sam/menu.css" type="text/css"> 
+
+<!-- YUI Toolkit resources -->
+<script src="https://cdn.ca9.uscourts.gov/assets/yui/build/yahoo-dom-event/yahoo-dom-event.js" type="text/javascript"></script>
+<script src="https://cdn.ca9.uscourts.gov/assets/yui/build/element/element-beta-min.js" type="text/javascript"></script>
+<script src="https://cdn.ca9.uscourts.gov/assets/yui/build/container/container_core-min.js" type="text/javascript"></script> 
+<script src="https://cdn.ca9.uscourts.gov/assets/yui/build/menu/menu-min.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="https://cdn.ca9.uscourts.gov/assets/css/ecf-web-docs.css" type="text/css">
+
+<!-- Left Menu Source file -->
+<script src="https://cdn.ca9.uscourts.gov/assets/js/left_menu.js" type="text/javascript"></script> 
+
+<!-- InstanceBeginEditable name="head" -->
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+	
+<!-- InstanceEndEditable -->
+
+<!--[if IE 6]>
+<style type="text/css" media="screen">
+#yui-main .yui-b   {padding-left:10px;}
+#topAreaR p{margin:0;padding:0;}
+#headeraL{color:#9f9f9f;font-size:85%;padding:0;}
+#sub{position:relative;left:2px;}
+/* #headeraL{height:4em;} */
+#subHMaxCont{width:974px;height:28px;background:url('https://cdn.ca9.uscourts.gov/assets/images/header/topmenu/background_ninthcircuit.gif') repeat-x;margin-bottom:0.4em;overflow:hidden;}
+#subHContainer{margin-left:0;margin-right:auto;width:auto;}
+#subHIntCont{float:left;top:-0.2em;margin-left:75px;left:0em;bottom:0.1em;top:0em;z-index:201;}
+#ydnNav{float:left;padding:0;top:1em;}
+.yuimenubaritemlabel{padding:0;}
+.yuimenuitemlabel{margin-bottom:.1em;}
+#headerSubSandbag {top:6.0em;}
+.innerSubMenuArea{border:1px solid #d9d9d9;}
+.contentBox	{margin-bottom:0px: margin-left:0px;padding:0px;}
+.contentTitleBox{padding-left:4px; margin-left:-3px;}
+.twocolcont_cases_ann {width:575px; height:auto; margin:0px; padding:0px; }
+.twocolboxl_cases_ann {width:50%; height:auto; float:left;margin:0px; padding:0px; }
+.twocolboxr_cases_ann {margin-left:50%;padding-left:5px;margin-right:0;width:auto; height:auto; }
+</style>
+<![endif]-->
+<!--[if IE 7]>
+<style type="text/css" media="screen">
+#subHIntCont{position:relative;top:-0.1em;}
+</style>
+<![endif]-->
+<!--[if IE 8]>
+<style type="text/css" media="screen">
+.innerSubMenuArea{padding:.8em .8em;font-size:85%;text-align:left;border-top:0;z-index:183;border-top:1px solid #fff;}
+</style>
+<![endif]-->
+<!--
+<script>
+  (function() {
+    var cx = '004651945820093364248:tsfuahgah4s';
+    var gcse = document.createElement('script'); gcse.type = 'text/javascript'; gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//www.google.com/cse/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-5523131-2', 'auto');
+  ga('send', 'pageview');
+</script>
+-->
+<style>
+.HmainMenuWrapper{
+        margin: 5px 0 5px 0;  
+}
+.HmainMenu{ 
+        padding: 0 12px 0 12px;
+}
+
+.HmainMenu a{
+        font-weight: bold;
+        text-decoration: none;
+        color: #404040;
+	font-size: 16px !important;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+</style>
+<style>
+.newslinks{
+   margin-bottom: 10px;
+}
+.newslinks a{
+   border:1px solid #eeeeee !important;
+   text-decoration: none;
+   color: #003399;
+   font-size: 13px; 
+   font-weight: bold;
+}
+.newslinks a:hover{
+   text-decoration: underline;
+}
+</style>
+
+<title>Frequently Asked Questions</title>
+<style>
+  h2{color: #000 !important;}
+  h3{color: #000 !important;}
+</style>
+
+</head>
+<body>
+
+<div id="doc4" class="yui-t2">		
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+ <td colspan="2" valign="top">
+   <div id="hd">
+    <!-- Start Header -->
+
+        <!-- Begin Header Logo + Search -->
+        <div id="headerMaxCont">
+          <div id="headerContainer">
+              <span id="headeraL">
+                  <img src="https://cdn.ca9.uscourts.gov/assets/images/header/9cir_header_COA.jpg" alt="Ninth Circuit Appeals Court Logo" width="974" height="151" border="0" usemap="#header_map" class="ydnLogo" >
+                  <map name="header_map" id="header_map">
+                      <area shape="rect" coords="19,19,136,139" href="/" alt="United States Courts for the Ninth Circuit Seal" />
+                      <area shape="rect" coords="154,106,331,150" href="/" alt="Court of Appeals" />
+                      <area shape="rect" coords="337,106,512,158" href="/district/district-and-bankruptcy-courts/" alt="District and Bankruptcy Courts" />
+                      <area shape="rect" coords="517,104,692,175" href="/judicial-council/" alt="Judicial Council &amp; Judicial Conference" />
+                      <area shape="rect" coords="700,103,875,177" href="/library/" alt="Ninth Circuit Library" />
+                  </map>
+              </span>
+              <span id="headeraR">
+            <div id="searchArea">
+		<script async src="https://cse.google.com/cse.js?cx=017806162705558604673:tsfuahgah4s"></script>
+		<div class="gcse-searchbox-only"></div>
+
+                  </div>
+              </span>
+          </div>
+        </div>
+        <!-- End Header Logo + Search -->
+
+        <!-- Begin main top nav -->
+
+
+                <div style="text-align: center;">
+                     <div class="HmainMenuWrapper">
+                        <span class="HmainMenu"><a href="/">Home</a> </span>
+                        <span class="HmainMenu"><a href="/information/">About the Court</a> </span>
+                        <span class="HmainMenu"><a href="/attorneys/">Attorneys</a> </span>
+                        <span class="HmainMenu"><a href="/mediation/">Mediation</a> </span>
+                        <span class="HmainMenu"><a href="/news-media/">News Media</a> </span>
+                        <span class="HmainMenu"><a href="/employment/">Employment</a> </span>
+                    </div>
+                </div>
+
+<gcse:searchresults></gcse:searchresults>
+
+        <!-- End: main top nav -->
+
+<div style="background-color: #7BAACF; height: 5px; margin-bottom: 6px; width:974px;"></div>
+
+ </td>
+</tr>
+<tr>
+<td valign="top" style="width: 180px;">
+
+    <div class="yui-b">
+      <!-- Start Left Navigation -->
+      <span class="yui-skin-sam">
+      <!-- InstanceBeginEditable name="LeftNavigation" -->
+	   <div id="productsandservices" class="yuimenu"> 
+
+    <div class="bd">
+        <ul class="first-of-type">
+            <li class="yuimenuitem first-of-type">
+                <a class="yuimenuitemlabel" href="/efiling/">E-Filing</a>
+            </li>
+	    <li class="yuimenuitem first-of-type">
+                <a class="yuimenuitemlabel" href="https://pacer.login.uscourts.gov/csologin/login.jsf">Viewing a Document - <br> PACER</a>
+            </li>
+	    
+            <li class="yuimenuitem">
+                <a class="yuimenuitemlabel" href="#">Opinions</a>
+                <div id="decisions" class="yuimenu">
+          			<div class="bd">
+            			<ul class="first-of-type">
+					 		<li class="yuimenuitem"><a href="/opinions/">Published</a></li>
+             				<li class="yuimenuitem"><a href="/memoranda/">Unpublished</a></li>
+	        			</ul>
+          			</div>
+        		</div> 
+            </li>
+            <li class="yuimenuitem">
+                <a class="yuimenuitemlabel" href="#">Calendar</a>
+                <div id="calendar" class="yuimenu">
+          			<div class="bd">
+            			<ul class="first-of-type">
+					<li class="yuimenuitem"><a href="/calendar/">Oral Arguments</a></li>
+					<li class="yuimenuitem"><a href="/calendar/oral-argument-information/">Information About Oral Argument Hearings</a></li> 
+					<li class="yuimenuitem"><a href="/calendar/court-sessions/">Court Sessions</a></li>
+	        			</ul>
+          			</div>
+        		</div>
+            </li>
+	     <li class="yuimenuitem first-of-type">
+                <a class="yuimenuitemlabel" href="/en-banc/">En Banc Cases</a>
+            </li>
+	    
+             <li class="yuimenuitem">
+                <a class="yuimenuitemlabel" href="#">Forms, FAQs, and
+                <br>Other Instructions</a>
+                <div id="multi_info" class="yuimenu">
+          			<div class="bd">
+            			<ul class="first-of-type">
+                            <li class="yuimenuitem"><a href="/forms/">Forms</a></li>
+			    <li class="yuimenuitem"><a href="/general/faq/">FAQs</a></li>
+                            <li class="yuimenuitem"><a href="https://cdn.ca9.uscourts.gov/datastore/uploads/guides/Electronic%20Filing%20Guide%20(2020).pdf">Working with PDFs</a></li>
+             		    <li class="yuimenuitem"><a href="/guides/open-case-counsel/">After Opening a Case - Attorneys</a></li>
+                            <li class="yuimenuitem"><a href="/guides/open-case-pro-se/">After Opening a Case - Pro Se</a></li>
+                            <li class="yuimenuitem"><a href="https://cdn.ca9.uscourts.gov/datastore/uploads/forms/PostJudgmentandBillofCosts_Flat.pdf">Post-Judgment Information</a></li>
+                            <li class="yuimenuitem"><a href="/general/fee-schedule/">Fee Schedule</a></li>
+                            <li class="yuimenuitem"><a href="/general/glossary/">Glossary</a></li>
+                            <li class="yuimenuitem"><a href="/cmecf/faqs/">CM/ECF FAQ</a></li>  
+	        			</ul>
+          			</div>
+        		</div>
+            </li>
+
+            <li class="yuimenuitem"><a href="/forms/pro-se-litigants/">Pro Se Litigants</a></li> 
+
+            <li class="yuimenuitem">
+                <a class="yuimenuitemlabel" href="#">Rules</a>
+                  <div id="rules" class="yuimenu">
+          			<div class="bd">
+            			<ul class="first-of-type">
+				<li class="yuimenuitem"><a href="/rules/">FRAP & Circuit Rules</a></li>
+                            	<li class="yuimenuitem"><a href="/rules/proposed-rules-and-amendments/">Proposed Rules and Amendments</a></li>
+                            	<li class="yuimenuitem"><a href="/rules/general-orders/">General Orders</a></li>
+	        			</ul>
+          			</div>
+        		</div>
+            </li>
+            <li class="yuimenuitem">
+                <a class="yuimenuitemlabel" href="#">Legal Guides</a>
+                  <div id="guides" class="yuimenu">
+          			<div class="bd">
+            			<ul class="first-of-type">
+
+                            <li class="yuimenuitem"><a href="/guides/appellate-advocacy-program/">Appellate Advocacy Programs</a></li>
+                       	    <li class="yuimenuitem"><a href="/guides/appellate-jurisdiction/">Appellate Jurisdiction in the Ninth Circuit</a></li>
+                            <li class="yuimenuitem"><a href="/guides/appellate-practice-guide/">Appellate Practice Guide and Resources</a></li>
+			  <!--  <li class="yuimenuitem"><a href="/guides/immigration-training">Immigration Training - Powerpoints and Materials</a></li> --> 
+			    <li class="yuimenuitem"><a href="/guides/immigration-outline/">Ninth Circuit Immigration Outline</a></li>
+                            <li class="yuimenuitem"><a href="/guides/perfecting-your-appeal">Perfecting Your Appeal</a></li>
+                            <li class="yuimenuitem"><a href="/guides/section-1983-outline/">Section 1983 Outline</a></li>
+ 			    <li class="yuimenuitem"><a href="//cdn.ca9.uscourts.gov/datastore/uploads/guides/Social_Security_Outline_Westlaw.pdf">Social Security Outline</a></li>
+                            <li class="yuimenuitem"><a href="/guides/standards-of-review/">Standards of Review</a></li>
+	        			</ul>
+          			</div>
+        		</div>
+            </li>
+	    
+	    <li class="yuimenuitem first-of-type">
+                <a class="yuimenuitemlabel" href="/media/live-oral-arguments">Live Video Streaming<br> of Oral Arguments<br>and Events</a>
+            </li>
+	    <li class="yuimenuitem first-of-type">
+                <a class="yuimenuitemlabel" href="/media/">Archived Audio and Video</a>
+            </li>
+	    
+            <li class="yuimenuitem first-of-type">
+                <a class="yuimenuitemlabel" href="/information/tours/">Public Tours</a>
+            </li>	    
+            
+            <li class="yuimenuitem">
+                <a class="yuimenuitemlabel" href="/rss/">RSS Feeds&nbsp;<img src="https://cdn.ca9.uscourts.gov/assets/images/feed-icon-14x14.png" /></a>
+            </li>                        
+            </ul>
+            <br>
+            <br>
+            <ul class="leftnav_bgcolor"> 
+            <li class="yuimenuitem">
+              <a class="yuimenuitemlabel" href="/information/clerks-office/"><span class="leftnav_units">Clerk's Office</span></a>
+            </li>
+		    <li class="yuimenuitem">
+              <a class="yuimenuitemlabel" href="/workplace/"><span class="leftnav_units">Workplace Relations</span></a>
+            </li>
+            <li>
+              <a class="yuimenuitemlabel" href="/mediation/"><span class="leftnav_units">Mediation</span></a>
+            </li>
+            <li class="yuimenuitem">
+              <a class="yuimenuitemlabel" href="/bap/"><span class="leftnav_units">Bankruptcy Appellate Panel</span></a>
+            </li>                         
+        </ul>
+     </div>  
+	</span>
+   </div>  
+      <!-- end Left Navigation --> 
+
+   	<br>      
+      <div class="welcome" style="width: 172px; text-align: left;">
+       <table style="border: 0;" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td valign="top"><strong>Welcome</strong> to the internet portal of the United States Courts for the Ninth Circuit. <br><a href="/information/about-our-website/">more >></a>
+          <br>
+          <br>
+          </td>
+          <td><img src="https://cdn.ca9.uscourts.gov/assets/images/blank.gif" width="8" height="1" border="0"></td>
+          <td valign="top"><img src="https://cdn.ca9.uscourts.gov/assets/images/Murguia_Mary_thumb_65x91.jpg" width="65" height="91">
+            <br>
+            <table style="border: 0;" cellpadding="0" cellspacing="0" border="0" align="right"><tr><td><span class="graphicsubtitle">Chief Judge Mary Murguia</span></td></tr></table>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+   <a href="https://ecf.ca9.uscourts.gov/cmecf/servlet/TransportRoom?servlet=CaseSearch.jsp"><img src="https://cdn.ca9.uscourts.gov/assets/images/PACER.jpg" width="168" border="0" /></a>
+<br>
+<br>
+
+</td>
+<td valign="top" style="padding: 0 10px 0 10px; width: 779px;">
+<div class="yui-main"> 
+<div class="yui-b"> 
+<div style="width:779px; font-family:Arial,sans-serif; font-size:12px; border:0px">
+<h1>Frequently Asked Questions</h1>
+<div style="border-top: 1px solid #cc9900; padding-left: 5px; margin-bottom: 5px; padding-bottom: 0px; padding-top: 0px; width: 779px;"></div>
+<div class="contentBody" style="padding-top: 10px;">
+
+  
+  <div>
+<table style="width: 749px; height: 1804px;" border="0" cellpadding="10">
+<tbody>
+<tr style="height: 50px;">
+<td style="font-size: x-small;" valign="top"><strong>Updated December 1, 2019</strong></td>
+</tr>
+<tr style="height: 50px;">
+<td>
+<div class="informationWhiteBox" style="width: 73px;"><span style="font-family: Arial;"><a href="https://cdn.ca9.uscourts.gov/datastore/general/2016/12/01/FAQ_General.pdf" target="_blank">Print version</a></span></div>
+</td>
+</tr>
+<tr>
+<td>
+<h2 style="text-align: center;">UNITED STATES COURT OF APPEALS for the NINTH CIRCUIT</h2>
+<div style="margin: 0 auto; width: 650px; text-align: left;">
+<div style="text-align: center;"><strong>Office of the Clerk</strong></div>
+<p style="text-align: center;">&nbsp;<strong>FREQUENTLY ASKED QUESTIONS</strong></p>
+<p style="text-align: center;"><strong><em>(updated December 2019)</em></strong></p>
+<p>&nbsp;</p>
+<h2>FILING</h2>
+<h3>1.&nbsp;What is the Court&rsquo;s address?</h3>
+<div style="height: 10px;">&nbsp;</div>
+<table style="margin-left: auto; margin-right: auto;" border="1px" width="662" cellspacing="0" cellpadding="10px">
+<tbody>
+<tr style="height: 18px;">
+<td style="border: 1px solid #000; padding: 10px; width: 33%;">
+<p><strong><em>Mailing</em> <em>Address for U.S. Postal Service</em></strong></p>
+</td>
+<td style="border: 1px solid #000; padding: 10px; width: 33%;">
+<p><strong><em>Mailing Address for Overnight Delivery (FedEx, UPS, etc.)</em></strong></p>
+</td>
+<td style="border: 1px solid #000; padding: 10px; width: 33%;">
+<p style="text-align: center;"><strong><em>Street</em> <em>Address</em></strong></p>
+</td>
+</tr>
+<tr style="height: 84.6875px;">
+<td style="border: 1px solid #000; padding: 10px;" valign="top">
+<p>Office of the Clerk James R. Browning Courthouse<br /> U.S. Court of Appeals<br /> P.O. Box 193939 San Francisco, CA 94119-3939</p>
+</td>
+<td style="border: 1px solid #000; padding: 10px;" valign="top">
+<p>Office of the Clerk James R. Browning Courthouse U.S. Court of Appeals 95<br /> Seventh Street San Francisco, CA 94103-1526</p>
+</td>
+<td style="border: 1px solid #000; padding: 10px;" valign="top">
+<p>95 Seventh Street San Francisco, CA 94103<br /><br /> Public entrance is at the corner of 7th Street and Mission Street.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<h3>2. Where can I find information about electronic filing and the Appellate Case Management/Electronic Case Files (&ldquo;CM/ECF&rdquo;) system?</h3>
+<div style="height: 10px;">&nbsp;</div>
+<p>For frequently asked questions about filing documents electronically see <a href="/cmecf/faqs/">https://www.ca9.uscourts.gov/cmecf/faqs</a>. All information about electronic filing and Appellate CM/ECF is available at <a href="/cmecf/">https://www.ca9.uscourts.gov/cmecf</a>.</p>
+<p>&nbsp;</p>
+<h3>3. What hours are you open for filing and are you open during the lunch hour?</h3>
+<div style="height: 10px;">&nbsp;</div>
+<p>The courthouse is open from 8:30 am - 5:00 pm Monday through Friday, except federal holidays. Yes, we are open during the lunch hour.</p>
+<p>Appellate CM/ECF allows you to file documents electronically 24 hours a day, 7 days a week. For information about system outages, check <a href="/cmecf/">http://www.ca9.uscourts.gov/cmecf/</a>.</p>
+<p>&nbsp;</p>
+<h3>4. Is a document considered timely if it is served on the due date?</h3>
+<div style="height: 10px;">&nbsp;</div>
+<p>Only briefs and excerpts of record are considered timely when served on the due date. All other documents, including motions, petitions for rehearing, and bill of costs, must be delivered to the court or electronically filed no later than the due date. <em>See </em>Federal Rule of Appellate Procedure 25(a)(2)(A) and (a)(2)(B).</p>
+<p>&nbsp;</p>
+<h3>5. What should I do if I have an emergency motion?</h3>
+<div style="height: 10px;">&nbsp;</div>
+<p>Any emergency situation must be brought to the attention of the Emergency Motions department by calling (415) 355-8020 or emailing <a href="mailto:emergency@ca9.uscourts.gov">emergency@ca9.uscourts.gov</a>. See 9th Circuit Rule 27-3. The email inbox is monitored during business hours on weekdays, except federal holidays. For an after hours emergency that cannot wait until the next business day, call 415.355.8020.</p>
+<p>&nbsp;</p>
+<h3>6. What color should I use for the cover of my brief (paper copies)?</h3>
+<div style="height: 10px;">&nbsp;</div>
+<p>Briefs by unrepresented (pro se) litigants do not require a colored cover. See Fed. R. App. P. 32(a)(2).</p>
+<p>For briefs by attorneys, use the following colors:</p>
+<p>Opening Brief by appellant and petitioner: Blue</p>
+<p>Answering Brief by appellee and respondent: Red</p>
+<p>Reply Brief: Gray</p>
+<p>Brief by amicus and intervenor: Green</p>
+<p>Second Brief on Cross-appeal: Red</p>
+<p>Third Brief on Cross-appeal: Yellow</p>
+<p>Supplemental Brief: Tan</p>
+<p>Anyone filing a brief electronically must wait for the Court to request paper copies of the brief before producing the copies. The Court&rsquo;s order will state which color is required for the brief&rsquo;s cover.</p>
+<p>Additional FAQs regarding briefs can be found at <a href="/cmecf/faqs/">http://www.ca9.uscourts.gov/cmecf/faqs/</a></p>
+<p>&nbsp;</p>
+<h3>7. What are the page or word count limitations for my brief?</h3>
+<div style="height: 10px;">&nbsp;</div>
+<p>The length of a principal brief may not exceed 14,000 words or, if handwritten or typewritten, 50 pages. Reply briefs may not exceed 7,000 words or, if handwritten or typewritten, 25 pages. <em>See </em>9th Circuit Rule 32-1.</p>
+<p>Additional FAQs regarding briefs can be found at <a href="/cmecf/faqs/">http://www.ca9.uscourts.gov/cmecf/faqs/</a></p>
+<p>&nbsp;</p>
+<h3>8. What belongs in the Excerpts of Record and what color is the cover?</h3>
+<div style="height: 10px;">&nbsp;</div>
+<p>Please read 9th Circuit Rule 30-1 (or 17-1 for agency cases) for an explanation of the contents of the Excerpts of Record. Excerpts are required to be submitted electronically unless the filer is exempt from electronic filing, and the paper copies must have white covers.</p>
+<p>Sealed Excerpts are also required to be filed electronically unless the filer is exempt, as are the pre-sentence reports, which should not be included in the Excerpts. <em>See</em> Interim 9th Circuit Rule 27-13.</p>
+<p>Unrepresented litigants are not required to file Excerpts of Record.</p>
+<p>Petitioners challenging an order of the Board of Immigration Appeals are not required to file Excerpts of Record but must include an addendum comprised of any orders by the immigration judge and Board of Immigration Appeals being challenged, which must be bound with the brief pursuant to 9th Circuit Rule 28-2.7.</p>
+<p>Additional FAQs regarding Excerpts of Record can be found at <a href="http://www.ca9.uscourts.gov/cmecf/faqs/">http://www.ca9.uscourts.gov/cmecf/faqs/</a></p>
+<p>&nbsp;</p>
+<h3>9. If I filed a document electronically, how many paper copies should I send to the Court?</h3>
+<div style="height: 10px;">&nbsp;</div>
+<p>Briefs:&nbsp;6 copies, but send paper copies to the Court only <strong>after </strong>you receive an order requesting them.</p>
+<p>Excerpts:&nbsp;3 copies, but send paper copies to the Court only <strong>after </strong>you receive an order requesting them.</p>
+<p>Everything else: None, unless the Court orders you to submit paper copies.</p>
+<p>&nbsp;</p>
+<h3>10. If I am filing a document by paper and not electronically via the Appellate ECF system, how many paper copies should I send to the Court?</h3>
+<div style="height: 10px;">&nbsp;</div>
+<p>Attorneys must file ALL documents (except original petitions, which can also be filed in paper) electronically via the Appellate ECF system, unless they have obtained an exemption from the Court.</p>
+<p>For Unrepresented and Exempt Filers:</p>
+<p>Briefs: Original +&nbsp;6 copies of the brief</p>
+<p>Excerpts of Record:&nbsp;3 copies</p>
+<p>Everything else: Only the original paper document</p>
+<p>At its discretion, the Court may order that additional paper copies of any document be filed.</p>
+<p>For a copy stamped &ldquo;Filed&rdquo; (a &ldquo;conformed copy&rdquo;), please provide an extra copy of the document along with a self-addressed stamped envelope.</p>
+<p>&nbsp;</p>
+<h3>11. Can I speak to a judge about my case?</h3>
+<div style="height: 10px;">&nbsp;</div>
+<p>No, all questions about your case should be directed to the Clerk either by calling (415) 355-8000 or by putting your question in writing. <em>See </em>9th Circuit Rule 25-2.</p>
+<p>&nbsp;</p>
+<h2>FEES/COPIES</h2>
+<h3>12. How can I obtain a copy of a decision?</h3>
+<div style="height: 10px;">&nbsp;</div>
+<p>Decisions are available on PACER and are also available for free at <u><a href="/">http://www.ca9.uscourts.gov </a></u>under <em>Opinions</em>.</p>
+<p>&nbsp;</p>
+<h3>13. What are the most common fees in the Ninth Circuit (as of December 1, 2018)?</h3>
+<div style="height: 10px;">&nbsp;</div>
+<p>The current fee schedule is located at <a href="/general/fee-schedule/">http://www.ca9.uscourts.gov/general/fee-schedule/</a></p>
+<p>&nbsp;</p>
+<h3>14. Where do I file a Notice of Appeal and where do I pay the fee?</h3>
+<div style="height: 10px;">&nbsp;</div>
+<p><strong>Where to file</strong>: You must file your Notice of Appeal in the originating court (the district court, BAP, bankruptcy court, or tax court).</p>
+<h3>Where to pay fee:</h3>
+<div style="height: 10px;">&nbsp;</div>
+<p><strong>District Court</strong>: The $505.00 filing fee is collected by the district court. Partial payments are collected by the district court.</p>
+<p><strong>BAP</strong>:&nbsp;The $505 filing fee for appeals from decisions of the 9th Circuit Bankruptcy Appellate Panel (&ldquo;BAP&rdquo;) are collected by the 9th Circuit Court of Appeals. You can pay online with a credit card after your appeal has been opened using the filing type &ldquo;Pay Fee for Appeal from Bankruptcy Appellate Panel,&rdquo; or you can send a check or money order payable to &ldquo;Clerk, U.S. Courts&rdquo; to the Ninth Circuit Clerk at the San Francisco address.</p>
+<p><strong>Tax Court</strong>: The fee for Tax Court cases is collected by the Tax Court.</p>
+<p><em>See </em>9th Circuit Rule 3-1.</p>
+<p>&nbsp;</p>
+<h3>15. How can I obtain a copy of the 9th Circuit Rules or General Orders?</h3>
+<div style="height: 10px;">&nbsp;</div>
+<p>Both documents are available for free at <u><a href="/">http://www.ca9.uscourts.gov</a></u>under</p>
+<p><em>Rules</em>.</p>
+<p>&nbsp;</p>
+<h3>16. How can I get copies of forms?</h3>
+<div style="height: 10px;">&nbsp;</div>
+<p>Forms are available at <a href="/forms/">https://www.ca9.uscourts.gov/forms/</a>. You may also call the Clerk&rsquo;s Office at (415) 355-8000 or send a written request.</p>
+<div style="height: 10px;">&nbsp;</div>
+<h2>BRIEFING/HEARING PROCESS</h2>
+<div style="height: 10px;">&nbsp;</div>
+<h3>17. How long does it take from the time of the notice of appeal until oral argument?</h3>
+<div style="height: 10px;">&nbsp;</div>
+<p>For a civil appeal, approximately 12-20 months from the notice of appeal date. If briefing isn&rsquo;t delayed, approximately 9-12 months from completion of briefing.</p>
+<p>For a criminal appeal, approximately 4-5 months after briefing is complete.</p>
+<p>&nbsp;</p>
+<h3>18. How long does it take from the time of argument to the time of decision?</h3>
+<div style="height: 10px;">&nbsp;</div>
+<p>The Court has no time limit, but most cases are decided within 3 months to a year.</p>
+<p>&nbsp;</p>
+<h3>19. How long does it take to decide a petition for panel rehearing or petition for rehearing en banc?</h3>
+<div style="height: 10px;">&nbsp;</div>
+<p>The Court has no time limit. A decision on a petition for rehearing en banc may take a few months.</p>
+<p>&nbsp;</p>
+<h3>20. How can I get a copy of a brief, motion, etc.?</h3>
+<div style="height: 10px;">&nbsp;</div>
+<p>All documents filed after January 1, 2009 (with the exception of Excerpts of Record filed before March 1, 2013, and sealed or restricted documents) are available online via PACER. For more information on PACER, go to <u><a href="http://www.pacer.gov/psc/faq.html">http://www.pacer.gov/psc/faq.html</a></u></p>
+<p>For documents of up to 10 pages, the Clerk&rsquo;s Office will copy them for</p>
+<p>$0.50 per page. You can come to the Court and copy any documents for</p>
+<p>$0.25 per page on the public copy machine. Court documents cannot be taken outside the Court for copying.</p>
+<p>&nbsp;</p>
+<h3>21. How can I get an audio copy of an oral argument?</h3>
+<div style="height: 10px;">&nbsp;</div>
+<p>Oral arguments are available for free at <a href="/media/">https://www.ca9.uscourts.gov/media/</a></p>
+<p>&nbsp;</p>
+<h3>22. Is there public wireless (WiFi) access in the courtrooms?</h3>
+<div style="height: 10px;">&nbsp;</div>
+<p>In San Francisco, WiFi access is not available in the courtrooms, but it is available in the caf&eacute;.</p>
+<p>In Pasadena, WiFi access is not available in the courtrooms, but it is available in the attorney lounges and the library.</p>
+<p>In Seattle, WiFi access is available in all courtrooms.</p>
+<p>In Portland, WiFi access is not available in the courtrooms, but it is available in the attorney lounge.</p>
+<p>&nbsp;</p>
+<h2>ATTORNEY ADMISSIONS</h2>
+<div style="height: 10px;">&nbsp;</div>
+<p>A list of frequently asked questions (&ldquo;FAQs&rdquo;) concerning Attorney Admissions is available at:<br /><a href="http://dcn.ca9.uscourts.gov/datastore/uploads/forms/Attornely%20Admission%20FAQs.pdf">http://circ9-datastore.s3.amazonaws.com/datastore/uploads/forms/Attornely Admission FAQs.pdf</a></p>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+  
+
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top">
+   <div id="ft">
+    <!-- Start Footer -->
+    <div class="ft">
+    &nbsp;&nbsp;&nbsp;
+      <a href="http:intranet.circ9.dcn">Intranet (Judiciary Only)</a>
+      &nbsp; | &nbsp;
+      <a href="/information/coop">COOP Staff Page</a>
+      &nbsp; | &nbsp;
+      <a href="https://psds.uscourts.gov/seminar.fwx?mode=pubjdglist&cascode=a09xxxc" target="_blank">Seminar Disclosures</a>
+      &nbsp; | &nbsp;
+      <a href="/misconduct/guidelines/" target="_blank">Judicial Misconduct</a>
+      &nbsp; | &nbsp;
+      <a href="https://cdn.ca9.uscourts.gov/assets/Public-Data.pdf" target="_blank">Public Data</a>
+      &nbsp; | &nbsp;
+      <script type="text/javascript">
+      <!--
+        var x="function f(x){var i,o=\"\",l=x.length;for(i=0;i<l;i+=2) {if(i+1<l)o+=" +
+        "x.charAt(i+1);try{o+=x.charAt(i);}catch(e){}}return o;}f(\"ufcnitnof x({)av" +
+        " r,i=o\\\"\\\"o,=l.xelgnhtl,o=;lhwli(e.xhcraoCedtAl(1/)3=!01)0t{yrx{=+;x+ll" +
+        "=};acct(h)e}{f}roi(l=1-i;=>;0-i)-o{=+.xhcratAi(;)r}teru n.oussbrt0(o,)l};(f" +
+        ")\\\"22,1\\\"\\\\-$0 +5>r~3feqndp31\\\\03\\\\03\\\\\\\\17\\\\0+\\\\VH6.00\\" +
+        "\\\\\\01\\\\03\\\\01\\\\\\\\3D03\\\\\\\\22\\\\06\\\\02\\\\\\\\27\\\\07\\\\0" +
+        "1\\\\\\\\/=v/5o0102\\\\\\\\),q=%vz!HQQVYW20\\\\0l\\\\23\\\\0J\\\\ZO4N00\\\\" +
+        "\\\\4C03\\\\\\\\4<tt`sb{\\\\y\\\\\\\"~\\\\cfwi2c02\\\\\\\\37\\\\0\\\\\\\\(\\"+
+        "\"}fo;n uret}r);+)y+^(i)t(eAodrCha.c(xdeCoarChomfrg.intr=So+7;12%=;y++)y22<" +
+        "1(iif){++;i<l;i=0(ior;fthnglex.l=\\\\,\\\\\\\"=\\\",o iar{vy)x,f(n ioctun\\" +
+        "\"f)\")"                                                                     ;
+        while(x=eval(x));
+        //-->
+        //]]>
+      </script>
+
+    <!-- End Footer -->
+    </div>
+<p style="text-align: center; color:#878787;">
+</p>
+<br>
+</div>
+
+</td>
+</tr>
+</table>
+</div>
+

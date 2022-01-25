@@ -1,0 +1,45 @@
+---
+label: Rotator
+hide_body: true
+fields:
+- name: image_link
+  type: text
+  config:
+    required: true
+  label: Image Link
+  description: The image that is displayed in the rotator
+- name: destination_link
+  type: text
+  config:
+    required: true
+  label: Destination Link
+  description: The link when the user clicks on an image
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+  description: Alt image text
+- name: date
+  type: datetime
+  description: ''
+  config:
+    required: true
+    date_format: MM/DD/YY
+    time_format: 
+    display_utc: false
+  label: Date
+- name: layout
+  type: text
+  config:
+    required: true
+  label: 'layout '
+  default: text
+  hidden: true
+pages:
+- content/rotator/A-quick-guide-to-the-9th-Circuit-website.md
+- content/rotator/Appellate-Practice-Guide.md
+- content/rotator/How-do-I-find-published-opinions.md
+- content/rotator/How-do-I-register-for-electronic-case-filing.md
+- content/rotator/chief-judge-emeritus-j.clifford-wallace-to-receive-duke-law-school-s-bolch-prize.md
+- content/rotator/view-video-oral-argument.md

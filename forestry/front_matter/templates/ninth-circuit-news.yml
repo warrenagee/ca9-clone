@@ -1,0 +1,41 @@
+---
+label: Ninth Circuit News
+hide_body: false
+fields:
+- name: type
+  type: text
+  config:
+    required: true
+  label: Type
+  default: ninth-circuit-news-singles
+- name: layo7ut
+  type: text
+  config:
+    required: true
+  label: Layout
+  default: index
+- name: date
+  type: datetime
+  description: ''
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+  label: Date
+  default: now
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+- name: link
+  type: text
+  config:
+    required: false
+  label: Link
+pages:
+- content/ninth-circuit-news/2020-ninth-circuit-annual-report.md
+- content/ninth-circuit-news/2020-ninth-circuit-annual-report.md
+- content/ninth-circuit-news/civics-contest-winners-panel.md
+- content/ninth-circuit-news/civics-contest-winners-panel.md

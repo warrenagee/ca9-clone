@@ -1,0 +1,58 @@
+---
+label: Employment
+hide_body: false
+fields:
+- name: layout
+  type: text
+  config:
+    required: false
+  label: layout
+  default: index
+  hidden: true
+- name: type
+  type: text
+  config:
+    required: false
+  label: type
+  default: main-two-column
+  hidden: true
+- name: title
+  type: text
+  config:
+    required: true
+  label: Title
+- name: court_unit
+  type: text
+  config:
+    required: true
+  label: Court/Unit
+  hidden: false
+- name: position_location
+  type: text
+  config:
+    required: true
+  label: Position Location
+- name: closing_date
+  type: text
+  config:
+    required: true
+  label: Closing Date
+- name: date_posted
+  type: datetime
+  label: Date Posted
+  description: ''
+  config:
+    required: true
+    date_format: 
+    time_format: 
+    display_utc: false
+  default: now
+- name: link
+  type: text
+  config:
+    required: true
+  label: PDF Link
+pages:
+- content/employment/chief-deputy-of-administration.md
+- content/employment/executive-assistant.md
+- content/employment/staff-attorney-communications-officer.md

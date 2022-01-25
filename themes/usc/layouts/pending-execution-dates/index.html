@@ -1,0 +1,111 @@
+{{ $.Scratch.Add "headerImage" "nav-top-main.jpg" }}
+{{ partial "header-main.html" . }}
+<title>{{ .Title }}</title>
+<style>
+  h2{color: #000 !important;}
+  h3{color: #000 !important;}
+
+table.pending{
+    border-collapse: separate;
+    border-spacing: 40px 5px;
+    width: 800px;
+}
+table.pending td{
+   font-size: 14px;
+   font-weight: bold;
+   white-space:nowrap;
+}
+
+table.pending a{
+    color: #000000;
+}
+
+table.pending a.pending-red{
+    color: #ff0000;
+}
+
+table.pending a.pending-blue{
+    color: #0000ff;
+}
+
+
+</style>
+
+</head>
+<body>
+
+<div id="doc4" class="yui-t2">		
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+ <td colspan="2" valign="top">
+{{ partial "header-menu-main.html" . }}
+ </td>
+</tr>
+<tr>
+<td valign="top" style="width: 180px;">
+
+   {{ partial "nav-left-main.html" . }}
+   {{ partial "welcome.html" . }}
+   {{ partial "pacer.html" . }}
+</td>
+<td valign="top" style="padding: 0 10px 0 10px; width: 779px;">
+<div class="yui-main"> 
+<div class="yui-b"> 
+<div style="width:779px; font-family:Arial,sans-serif; font-size:12px; border:0px">
+<div class="contentBody" style="padding-top: 10px;">
+
+<table style="font-family: Verdana; color: #000;" border="0" width="90%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr>
+<td colspan="3" align="right">
+<span style="font-size: 13px; color:#000;align-right">Last updated: {{ dateFormat "January 02, 2006, 3:04 PM" .Params.date }}
+<br><br><br>
+</td>
+</tr>
+<tr style="vertical-align: top;">
+<td style="text-align: center; padding: 3.75pt;" colspan="3">
+<p><span style="font-size: large;"><strong>{{ .Params.name }}</strong></span></p>
+<p><strong>{{ .Params.short_title }}</strong></p>
+</td>
+</tr>
+<tr style="vertical-align: top;">
+<td style="text-align: left; border-top: medium none; padding: 3.75pt;" colspan="3"><hr /></td>
+</tr>
+<tr style="vertical-align: top;">
+<td style="text-align: left; border-top: medium none; padding: 3.75pt;" colspan="3">
+<span style="font-family: Verdana;">We've created this page in order to assist the Court, the parties and the public who may be looking for quick access to the documents filed and/or lodged in this matter in all courts (<b style="color: green;">United States Supreme</b>,<b style="color: blue;">Circuit</b>, <b style="color: black;">District</b> and <b style="color: red;">State courts</b>) leading up to the noted execution date.</span>
+</td>
+</tr>
+<tr style="vertical-align: top;" valign="top">
+<td style="border-top: medium none; padding: 3.75pt;" colspan="3" valign="top"><hr /></td>
+</tr>
+</tbody>
+</table>
+<div id="ci_pe">
+
+<table style="font-family: Verdana; margin-bottom: 200px; color: #000;" border="0" width="90%" cellspacing="0" cellpadding="0">
+<tbody>
+<tr style="vertical-align: top;" valign="top">
+<td><br><br>
+  {{ with .Content }}
+  <div>{{ . }}</div>
+  {{ end }}
+</td>
+</tr>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top">
+   {{ partial "footer-main.html" . }}
+</td>
+</tr>
+</table>
+</div>
+

@@ -1,0 +1,100 @@
+{{ partial "header-main.html" . }}
+{{ $.Scratch.Add "headerImage" "nav-top-main.jpg" }}
+
+<title>{{ .Title }}</title>
+
+<style>
+#container-table{
+   width: 100%;
+}
+.newslinks{
+   margin-bottom: 10px;
+}
+.newslinks a{
+   border:1px solid #eeeeee !important;
+   text-decoration: none;
+   color: #003399;
+   font-size: 13px; 
+   font-weight: bold;
+}
+.newslinks a:hover{
+   text-decoration: underline;
+}
+
+</style>
+
+</head>
+<body>
+<div id="doc4" class="yui-t2">
+<table cellpadding="0" cellspacing="0">
+<tr>
+ <td colspan="3" valign="top">
+{{ partial "header-menu-main.html" . }}
+ </td>
+</tr>
+<tr>
+<td valign="top">
+
+   {{ partial "nav-left-main.html" . }}
+   {{ partial "welcome.html" . }}
+   {{ partial "pacer.html" . }}
+</td>
+
+<td style="padding-left: 15px; padding:right: 1px; width: 575px;" valign="top">
+
+
+<h1>{{ .Title }}</h1>
+
+<div style="border-top: 1px solid #cc9900; padding-left: 10px; margin-bottom: 15px; width: 500px;"></div>
+
+<table style="width: 575px;">
+
+            <tr>
+                <td style="background-color: #fff; padding: 10px; color: #000; font-size: 14px;">
+
+
+{{ range (where .Data.Pages "Section" "post").Reverse }} {{.Title}}</br>  {{ end }}
+
+
+        {{ range (where .Site.RegularPages "Section" "newsletters").Reverse }}
+           <p style="margin-bottom: 30px; font-size: 17px;">
+
+ <a style="text-decoration: none; font-weight: bold;" href='https://www.ca9.uscourts.gov/newsletters/{{ .File.BaseFileName }}/'>{{ .Params.Title }}</a><br />
+
+           </p>
+
+        {{ end }}
+
+
+                 </td>
+             </tr>
+        </table>
+
+</td>
+<td valign="top">
+ 
+
+<table>
+  <tr>
+    <td>
+
+	{{ partial "news.html" . }}
+
+
+       </td>
+     </tr>
+</table>
+
+<br>
+
+
+</td>
+</tr>
+<tr>
+<td colspan="3" valign="top">
+   {{ partial "footer-main.html" . }}
+</td>
+</tr>
+</table>
+</div>
+© 2021 GitHub, Inc.

@@ -1,0 +1,47 @@
+{{ $.Scratch.Add "headerImage" "nav-top-council.jpg" }}
+
+{{ partial "header-main.html" . }}
+<title>{{ .Title }}</title>
+<style>
+h2{
+  color: #000000 !important;
+}
+</style>
+</head>
+<body>
+
+<div id="doc4" class="HEREyui-t2">		
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+ <td colspan="2" valign="top">
+{{ partial "header-menu-council.html" . }}
+ </td>
+</tr>
+<tr>
+<td valign="top" style="width: 180px;">
+
+   {{ partial "nav-left-council.html" . }}
+   {{ partial "pacer.html" . }}
+</td>
+<td valign="top" style="padding: 0 10px 0 10px; width: 665px;">
+<div style="border-top: 1px solid #cc9900; padding-left: 5px; margin-bottom: 25px; padding-bottom: 0px; padding-top: 0px; width: 665px;"></div>
+ <!-- Start Main Content --> 
+    <div class="yui-b">
+
+
+  {{ with .Content }}
+  <div>{{ . }}</div>
+  {{ end }}
+
+</div>
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top">
+   {{ partial "footer-main.html" . }}
+</td>
+</tr>
+</table>
+</div>
+

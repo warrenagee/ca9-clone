@@ -38,17 +38,11 @@
           </td>
 
           <ul>
-
-              {{ range (where (where .Site.RegularPages "Section" "media") ".Params.streaming" "1"  ) }}
-
-                   <li style="padding-bottom: 20px;">
-                        <p>
-                        {{.Content}}
-                        </p>
-                   </li>
-
-                {{ end }}
-
+		{{ $url := "https://ca9-av-audio-test.s3.us-west-1.amazonaws.com/test-data/media/streaming.json" }}
+		{{ $jsondata := getJSON $url }}
+		{{ range $jsondata }}
+		  <li>{{ .title }}</li>
+		{{ end }}
             </ul>   
 
          </td>

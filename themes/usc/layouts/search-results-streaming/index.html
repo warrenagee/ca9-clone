@@ -1,8 +1,8 @@
 <strong>Test of using Data files</strong>
 <ul>
-{{ $url := "https://ca9-av-audio-test.s3.us-west-1.amazonaws.com/test-data/sample.json" }}
+{{ $url := "https://ca9-av-audio-test.s3.us-west-1.amazonaws.com/test-data/media/streaming.json" }}
 {{ $jsondata := getJSON $url }}
-{{ range $jsondata.discography }}
-  <li>{{ . }}</li>
+{{ range $jsondata }}
+  <li>{{ .title }}</li>
 {{ end }}
 </ul> 

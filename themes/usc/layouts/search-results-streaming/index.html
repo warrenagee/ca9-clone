@@ -3,6 +3,6 @@
 {{ $url := "https://ca9-av-audio-test.s3.us-west-1.amazonaws.com/test-data/sample.json" }}
 {{ $jsondata := getJSON $url }}
 {{ range $jsondata.discography }}
-  <li>{{ . }} test</li>
+  <li>{{ . }}</li>
 {{ end }}
 </ul> 

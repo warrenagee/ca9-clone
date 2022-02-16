@@ -1,14 +1,9 @@
 <script>
 $(function() {
-    
     const queryString = window.location.search;
     console.log('querystring = ' , queryString);
     const urlParams = new URLSearchParams(queryString);
     const id = urlParams.get('id');
-    console.log('id = ' , id);
-    
     $('.hearing-'+id).show();
-    
-    
 }); // end $(function() {
 </script>

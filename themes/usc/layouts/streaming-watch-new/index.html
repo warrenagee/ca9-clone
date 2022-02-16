@@ -34,21 +34,13 @@
 <div style="width:779px; font-family:Arial,sans-serif; font-size:12px; border:0px">
 <!--<div style="border-top: 1px solid #cc9900; padding-left: 5px; margin-bottom: 5px; padding-bottom: 0px; padding-top: 0px; width: 779px;"></div>-->
 <div class="contentBody" style="padding-top: 10px;">
-	<p>This is a work in progress.</p>
-	<ul>
-		{{ $url := "https://92yivbos5c.execute-api.us-west-2.amazonaws.com/default/getStreamingPublishItems" }}
-		{{ $jsondata := getJSON $url }}
-		{{ with $jsondata }}
-			{{ range $jsondata }}
-			  <li>Title: {{ .title }}, Hearing Date: {{ .hearing_date }}</li>
-		  {{ end }}
-		{{ else }}	
-			There are no Oral Arguments Scheduled for today.
-		{{ end }}
-	</ul>   
-	<div>
-		<div style="width:600px; border-bottom:2px dotted #666666; margin-bottom: 10px;">
-			<h3 style="margin-bottom: 5px; font-size: 14px;">Watch live: <span style="font-weight:normal;">Stream A1a</span></h3>
+	
+	{{ $url := "https://92yivbos5c.execute-api.us-west-2.amazonaws.com/default/getStreamingPublishItems" }}
+	{{ $jsondata := getJSON $url }}
+	{{ with $jsondata }}
+		{{ range $jsondata }}
+		  	<div style="width:600px; border-bottom:2px dotted #666666; margin-bottom: 10px;">
+			<h3 style="margin-bottom: 5px; font-size: 14px;">Watch live: <span style="font-weight:normal;">.title</span></h3>
 			</div>
 			<div id="content-container">
 			<table>
@@ -82,7 +74,11 @@
 			</td></tr>
 			</table>
 			</div>
-	</div>
+	  	{{ end }}
+	{{ else }}	
+		There are no Oral Arguments Scheduled for today.
+	{{ end }}
+		
 </div>
 </div>
 </div>

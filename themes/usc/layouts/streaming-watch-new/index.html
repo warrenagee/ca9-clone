@@ -39,7 +39,7 @@
 	{{ $jsondata := getJSON $url }}
 	{{ with $jsondata }}
 		{{ range $jsondata }}
-			<div class='hearing-{{ .row_id }}' style="display:none" >
+			<div class="hearing-{{ .row_id }}" style="display:none" >
 				<div style="width:600px; border-bottom:2px dotted #666666; margin-bottom: 10px;">
 				<h3 style="margin-bottom: 5px; font-size: 14px;">Watch live: <span style="font-weight:normal;">{{ .title }}</span></h3>
 				</div>

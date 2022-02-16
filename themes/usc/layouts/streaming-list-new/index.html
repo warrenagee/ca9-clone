@@ -40,9 +40,15 @@
           <ul>
 		{{ $url := "https://92yivbos5c.execute-api.us-west-2.amazonaws.com/default/getStreamingPublishItems" }}
 		{{ $jsondata := getJSON $url }}
-		{{ range $jsondata }}
-		  <li>Title: {{ .title }}, Hearing Date: {{ .hearing_date }}</li>
+		{{ with $jsondata }}
+		  	{{ range $jsondata }}
+		  		<li>Title: {{ .title }}, Hearing Date: {{ .hearing_date }}</li>
+			{{ end }}
+		{{ else }}
+		  	There are no Oral Arguments Scheduled for today.
 		{{ end }}
+		  
+		
             </ul>   
 
          </td>

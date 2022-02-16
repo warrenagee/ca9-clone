@@ -1,0 +1,12 @@
+<script>
+$(function() {
+    
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const yt_param = urlParams.get('yt');
+    
+    console.log('youtube code = ' , yt_param);
+    
+    
+}); // end $(function() {
+</script>

@@ -40,17 +40,17 @@
 	{{ with $jsondata }}
 		{{ range $jsondata }}
 		  	<div style="width:600px; border-bottom:2px dotted #666666; margin-bottom: 10px;">
-			<h3 style="margin-bottom: 5px; font-size: 14px;">Watch live: <span style="font-weight:normal;">.title</span></h3>
+			<h3 style="margin-bottom: 5px; font-size: 14px;">Watch live: <span style="font-weight:normal;">{{ .title }}</span></h3>
 			</div>
 			<div id="content-container">
 			<table>
 			<tr><td colspan="2" class="av-content">
-			<div id="youtube_link" style="height:390px; width:640px; background-color:#000;"><iframe title='YouTube video player' src='https://www.youtube.com/embed/aaaaaaa?rel=0' width='640' height='390' allowfullscreen='true' frameborder='0' class='youtube-player'></iframe></div>
+			<div id="youtube_link" style="height:390px; width:640px; background-color:#000;"><iframe title='YouTube video player' src='https://www.youtube.com/embed/{{ .youtube_code }}?rel=0' width='640' height='390' allowfullscreen='true' frameborder='0' class='youtube-player'></iframe></div>
 			</td></tr>
 			<tr><td class="av-title">
 			Case Name:
 			</td><td class="av-content">
-			Stream A1a
+			{{ .title }}
 			</td></tr>
 			<tr><td class="av-title">
 			Case Number:
@@ -65,12 +65,12 @@
 			<tr><td class="av-title">
 			Hearing Location:
 			</td><td class="av-content">
-			Pasadena, CA
+			{{ .hearing_location }}
 			</td></tr>
 			<tr><td class="av-title">
 			Hearing Date:
 			</td><td class="av-content">
-			2022-02-07
+			{{ .hearing_date }}
 			</td></tr>
 			</table>
 			</div>

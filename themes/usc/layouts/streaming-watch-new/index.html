@@ -34,23 +34,24 @@
 <div style="width:779px; font-family:Arial,sans-serif; font-size:12px; border:0px">
 <!--<div style="border-top: 1px solid #cc9900; padding-left: 5px; margin-bottom: 5px; padding-bottom: 0px; padding-top: 0px; width: 779px;"></div>-->
 <div class="contentBody" style="padding-top: 10px;">
-  <table style="width: 500px;" class="data-table">
-	  <tr>
-     <td>
-       <ul>
-            {{ $url := "https://92yivbos5c.execute-api.us-west-2.amazonaws.com/default/getStreamingPublishItems" }}
-            {{ $jsondata := getJSON $url }}
-            {{ with $jsondata }}
-                {{ range $jsondata }}
-                  <li>Title: {{ .title }}, Hearing Date: {{ .hearing_date }}</li>
-              {{ end }}
-            {{ else }}
-                There are no Oral Arguments Scheduled for today.
-            {{ end }}
-      </ul>   
-    </td>
-  </tr>
-</table>
+	<p>This is a work in progress.</p>
+	<table style="width: 500px;" class="data-table">
+		<tr>
+     		<td>
+       			<ul>
+					{{ $url := "https://92yivbos5c.execute-api.us-west-2.amazonaws.com/default/getStreamingPublishItems" }}
+					{{ $jsondata := getJSON $url }}
+					{{ with $jsondata }}
+						{{ range $jsondata }}
+						  <li>Title: {{ .title }}, Hearing Date: {{ .hearing_date }}</li>
+					  {{ end }}
+					{{ else }}	
+						There are no Oral Arguments Scheduled for today.
+					{{ end }}
+      			</ul>   
+    		</td>
+  		</tr>
+	</table>
 </div>
 </div>
 </div>

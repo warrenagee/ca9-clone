@@ -2,10 +2,12 @@
 $(function() {
     
     const queryString = window.location.search;
+    console.log('querystring = ' , queryString);
     const urlParams = new URLSearchParams(queryString);
-    const yt_param = urlParams.get('yt');
+    const id = urlParams.get('id');
+    console.log('id = ' , id);
     
-    console.log('youtube code = ' , yt_param);
+    $('.hearing-'+id).show();
     
     
 }); // end $(function() {

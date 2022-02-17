@@ -41,7 +41,7 @@
 			{{ $jsondata := getJSON $url }}
 			{{ with $jsondata }}
 				{{ range $jsondata }}
-					<li style="padding-bottom:10px; color:#000"><a href="https://dy08pdae2ui3e.cloudfront.net/media/live-oral-arguments/watch/?id={{ .row_id }}" >{{ .title }}</a></li>
+					<li style="padding-bottom:10px"><a style="color:#000" href="https://dy08pdae2ui3e.cloudfront.net/media/live-oral-arguments/watch/?id={{ .row_id }}" >{{ .title }}</a></li>
 				{{ end }}
 			{{ else }}
 				There are no Oral Arguments Scheduled for today.

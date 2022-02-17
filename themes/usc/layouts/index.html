@@ -188,7 +188,7 @@
 		{{ $jsondata := getJSON $url }}
 		{{ with $jsondata }}
 			{{ range $jsondata }}
-				<p class="black"><li style="padding-bottom:10px"><a href="https://dy08pdae2ui3e.cloudfront.net/media/live-oral-arguments/watch/?id={{ .row_id }}" >{{ .title }}</a></p></li>
+				<li style="padding-bottom:10px"><p class="black"><a href="https://dy08pdae2ui3e.cloudfront.net/media/live-oral-arguments/watch/?id={{ .row_id }}" >{{ .title }}</a></p></li>
 			{{ end }}
 		{{ else }}
 			There are no oral arguments scheduled for today.

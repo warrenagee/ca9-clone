@@ -184,18 +184,15 @@
        <td>
 	
 	<ul>
-
-
- {{ range (where (where .Site.RegularPages "Section" "media") ".Params.streaming" "1"  ) }}
-
-                   <li style="padding-bottom: 10px;">
-                        <p class="black">
-                        {{.Content}}
-                        </p>
-                   </li>
-
+		{{ $url := "https://92yivbos5c.execute-api.us-west-2.amazonaws.com/default/getStreamingPublishItems" }}
+		{{ $jsondata := getJSON $url }}
+		{{ with $jsondata }}
+			{{ range $jsondata }}
+				<li style="padding-bottom:10px"><a href="https://dy08pdae2ui3e.cloudfront.net/media/live-oral-arguments/watch/?id={{ .row_id }}" >{{ .title }}</a></li>
+			{{ end }}
+		{{ else }}
+			There are no oral arguments scheduled for today.
 		{{ end }}
-
 	</ul>
 
         </td>

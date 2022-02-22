@@ -72,13 +72,13 @@
 	{{ end }}
 	<h1>here is john's test data</h1>
 	{{ $url := "https://75n6z59c1b.execute-api.us-west-2.amazonaws.com/default/get-hugo-data-for-opinions" }}
-	(( $johndata := getJSON $url ))
-	{{ with $johndata }}
-		{{ range $johndata }}
+	(( $jsondata := getJSON $url ))
+	{{ with $jsondata }}
+		{{ range $jsondata }}
 			.
 		{{ end }}
 	{{ else }} 
-		there is no johndata.
+		there is no jsondata.
 	{{ end }}
 		
 </div>

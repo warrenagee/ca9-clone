@@ -70,21 +70,7 @@
 	{{ else }}	
 		There are no Oral Arguments Scheduled for today.
 	{{ end }}
-	<h1>here is john's test data</h1>
-	{{ $url := "https://75n6z59c1b.execute-api.us-west-2.amazonaws.com/default/get-hugo-data-for-opinions" }}
-	{{ $jsondata := getJSON $url }}
-	{{ with $jsondata }}
-		{{ range $jsondata }}
-			{{ .case_num }} <Br>
-			{{ .casename }} <br>
-			{{ .judge }} <br>
-			{{ .case_origin }} <br>
-			{{ .file_name }} <br>
-		{{ end }}
-	{{ else }} 
-		there is no jsondata.
-	{{ end }}
-		
+	
 </div>
 </div>
 </div>

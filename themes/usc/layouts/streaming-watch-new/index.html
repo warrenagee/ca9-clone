@@ -75,7 +75,7 @@
 	{{ $jsondata := getJSON $url }}
 	{{ with $jsondata }}
 		{{ range $jsondata }}
-			.
+			.Content
 		{{ end }}
 	{{ else }} 
 		there is no jsondata.

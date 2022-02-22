@@ -6,7 +6,7 @@
   <li>{{ . }} test</li>
 {{ end }}
   
-{{ $url := https://75n6z59c1b.execute-api.us-west-2.amazonaws.com/default/get-hugo-data-for-opinions }}
+{{ $url := "https://75n6z59c1b.execute-api.us-west-2.amazonaws.com/default/get-hugo-data-for-opinions" }}
 
 {{ $jsondata := getJSON $url }}
 {{ with $jsondata }}

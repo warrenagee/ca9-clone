@@ -75,10 +75,10 @@
 	{{ $jsondata := getJSON $url }}
 	{{ with $jsondata }}
 		{{ range $jsondata }}
-			.case_num<Br>
-			.casename<br>
-			.judge<br>
-			.case_origin<br>
+			{{ .case_num }} <Br>
+			{{ .casename }} <br>
+			{{ .judge }} <br>
+			{{ .case_origin }} <br>
 		{{ end }}
 	{{ else }} 
 		there is no jsondata.

@@ -1,11 +1,5 @@
-<strong>Test of using Data files xxx</strong>
-<ul>
-{{ $url := "https://ca9-av-audio-test.s3.us-west-1.amazonaws.com/test-data/sample.json" }}
-{{ $jsondata := getJSON $url }}
-{{ range $jsondata.discography }}
-  <li>{{ . }} test</li>
-{{ end }}
-  
+<strong>Test of using john's data</strong>
+
 {{ $url := "https://75n6z59c1b.execute-api.us-west-2.amazonaws.com/default/get-hugo-data-for-opinions" }}
 
 {{ $jsondata := getJSON $url }}
@@ -20,6 +14,3 @@
 {{ else }} 
     there is no jsondata.
 {{ end }}
-
-  
-</ul> 

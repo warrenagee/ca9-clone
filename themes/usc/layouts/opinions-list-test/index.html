@@ -37,14 +37,14 @@
 	<tr>
           <td>
           	<ul>
-			{{ $url := "https://92yivbos5c.execute-api.us-west-2.amazonaws.com/default/getStreamingPublishItems" }}
+			{{ $url := "https://upevszxcs2.execute-api.us-west-2.amazonaws.com/default/getOpinionsPublishItemsWA" }}
 			{{ $jsondata := getJSON $url }}
 			{{ with $jsondata }}
 				{{ range $jsondata }}
-					<li style="padding-bottom:10px"><a style="color:#000" href="https://dy08pdae2ui3e.cloudfront.net/media/live-oral-arguments/watch/?id={{ .row_id }}" >{{ .title }}</a></li>
+					<li style="padding-bottom:10px"><a style="color:#000" href="https://ca9-av-audio-test.s3.us-west-1.amazonaws.com/{{ .file_name }}" >{{ .case_name }}</a></li>
 				{{ end }}
 			{{ else }}
-				There are no Oral Arguments Scheduled for today.
+				I couldn't find any opinions! Boo.
 			{{ end }}
             	</ul>   
          </td>

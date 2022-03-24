@@ -41,7 +41,7 @@
 			{{ $jsondata := getJSON $url }}
 			{{ with $jsondata }}
 				{{ range $jsondata }}
-					<li style="padding-bottom:10px">{{ .short_date }}<a style="color:#000" href="https://ca9-av-audio-test.s3.us-west-1.amazonaws.com{{ .file_name }}" >{{ .case_name }}</a></li>
+					<li style="padding-bottom:10px">{{ .short_date }} <a style="color:#000" href="https://ca9-av-audio-test.s3.us-west-1.amazonaws.com{{ .file_name }}" >{{ .case_name }}</a></li>
 				{{ end }}
 			{{ else }}
 				I couldn't find any opinions! Boo.

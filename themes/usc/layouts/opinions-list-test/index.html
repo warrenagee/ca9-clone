@@ -40,7 +40,7 @@
 			{{ $url := "https://upevszxcs2.execute-api.us-west-2.amazonaws.com/default/getOpinionsPublishItemsWA" }}
 			{{ $jsondata := getJSON $url }}
 			{{ with $jsondata }}
-				{{ range $jsondata }}
+				{{ range first 10 $jsondata }}
 					<li style="padding-bottom:10px">{{ .short_date }} <a style="color:#000" href="https://ca9-av-audio-test.s3.us-west-1.amazonaws.com{{ .file_name }}" >{{ .case_name }}</a></li>
 				{{ end }}
 			{{ else }}

@@ -1,0 +1,65 @@
+{{ $.Scratch.Add "headerImage" "nav-top-main.jpg" }}
+{{ partial "header-main.html" . }}
+<title>{{ .Title }}</title>
+<style>
+  h2{color: #000 !important;}
+  h3{color: #000 !important;}
+  .data-table{font-size: 14px;}
+</style>
+
+</head>
+<body>
+
+<div id="doc4" class="yui-t2">		
+
+<table cellpadding="0" cellspacing="0">
+<tr>
+ <td colspan="2" valign="top">
+{{ partial "header-menu-main.html" . }}
+ </td>
+</tr>
+<tr>
+<td valign="top" style="width: 180px;">
+
+   {{ partial "nav-left-main.html" . }}
+   {{ partial "welcome.html" . }}
+   {{ partial "pacer.html" . }}
+</td>
+<td valign="top" style="padding: 0 10px 0 10px; width: 779px;">
+<div class="yui-main"> 
+<div class="yui-b"> 
+<div style="width:779px; font-family:Arial,sans-serif; font-size:12px; border:0px">
+<h1>{{ .Title }}</h1>
+<div style="border-top: 1px solid #cc9900; padding-left: 5px; margin-bottom: 5px; padding-bottom: 0px; padding-top: 0px; width: 779px;"></div>
+<div class="contentBody" style="padding-top: 10px;">
+
+<table style="width: 500px;" class="data-table">
+	<tr>
+          <td>
+          	<ul>
+			{{ $url := "https://upevszxcs2.execute-api.us-west-2.amazonaws.com/default/getMemosPublishItemsWA" }}
+			{{ $jsondata := getJSON $url }}
+			{{ with $jsondata }}
+				{{ range first 50 $jsondata }}
+					<li style="padding-bottom:10px">{{ .short_date }} <a style="color:#000" href="https://ca9-av-audio-test.s3.us-west-1.amazonaws.com{{ .file_name }}" >{{ .case_name }}</a></li>
+				{{ end }}
+			{{ else }}
+				I couldn't find any memos! Boo.
+			{{ end }}
+            	</ul>   
+         </td>
+     </tr>
+ </table>
+</div>
+</div>
+</div>
+</div>
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top">
+   {{ partial "footer-main.html" . }}
+</td>
+</tr>
+</table>
+</div>

@@ -198,20 +198,19 @@
 <th>Code</th>
 <th>Date&nbsp;filed</th>
 </tr>
-
-            {{ range  (sort (where .Site.RegularPages "Section" "memoranda") ".Params.memoranda_sort") }}
-
+	{{ $url := "https://cico8xqnri.execute-api.us-west-2.amazonaws.com/default/getMemosPublishItemsWA" }}
+	{{ $jsondata := getJSON $url }}
+	{{ range first 100 $jsondata }}
+	
 			<tr>
-			<td><a href="{{ .Params.link }}">{{ .Title }}</a></td>
-                        <td>{{ .Params.case_num }}</td>
-                        <td>{{ .Params.case_panel }}</td>
-                        <td>{{ .Params.case_origin }}</td>
-                        <td>{{ .Params.case_type }}</td>
-                        <td>{{ .Params.case_code }}</td>
-                        <td>{{ .Params.date_filed }}</td>
+			<td><a href="{{ .file_name }}">{{ .case_name }}</a></td>
+                        <td>{{ .case_num }}</td>
+                        <td>{{ .authoring_judge }}</td>
+                        <td>{{ .case_origin }}</td>
+                        <td>{{ .case_type }}</td>
+                        <td>{{ .short_date }}</td>
 			</tr>
-
-
+	
             {{ end }}
 
    <tr><td colspan='7' style='background-color: #EEEEEE; text-align: center; padding: 10px;'>                           

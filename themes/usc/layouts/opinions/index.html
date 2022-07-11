@@ -2,7 +2,7 @@
 {{ partial "header-main.html" . }}
 {{ partial "spry.html" . }}
 {{ partial "dynamodb.html" . }}
-<title>X {{ .Title }} X</title>
+<title>{{ .Title }}</title>
 <script src="https://cdn.ca9.uscourts.gov/assets/js/dynamodb-search-opinions-20210812.js"></script>
   <script>
   $( function() {
@@ -177,21 +177,20 @@
 <th>Code</th>
 <th>Date&nbsp;filed</th>
 </tr>
-
-            {{ range  (sort (where .Site.RegularPages "Section" "opinions") ".Params.opinions_sort") }}
-
-			<tr>
-			<td><a href="{{ .Params.link }}">{{ .Title }}</a></td>
-                        <td>{{ .Params.case_num }}</td>
-                        <td>{{ .Params.case_origin }}</td>
-                        <td>{{ .Params.authoring_judge }}</td>
-                        <td>{{ .Params.case_type }}</td>
-                        <td>{{ .Params.case_code }}</td>
-                        <td>{{ .Params.date_filed }}</td>
-			</tr>
-
-
-            {{ end }}
+	{{ $url := "https://upevszxcs2.execute-api.us-west-2.amazonaws.com/default/getOpinionsPublishItemsWA" }}
+	{{ $jsondata := getJSON $url }}
+	{{ with $jsondata }}
+        {{ range first 100 $jsondata }}
+		<tr>
+			<td><a href="{{ .file_name }}">{{ .case_name }}</a></td>
+			<td>{{ .case_num }}</td>
+			<td>{{ .case_origin }}</td>
+			<td>{{ .judge }}</td>
+			<td>{{ .case_type }}</td>
+			<td>{{ .short_date }}</td>
+			
+		</tr>
+	{{ end }}
 
    <tr><td colspan='7' style='background-color: #EEEEEE; text-align: center; padding: 10px;'>                           
    <div id='more_activity_pane'></div>More records available. 

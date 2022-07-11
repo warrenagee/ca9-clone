@@ -177,10 +177,23 @@
 <th>Date&nbsp;filed</th>
 </tr>
 	
-	{{ $url := "https://cico8xqnri.execute-api.us-west-2.amazonaws.com/default/getMemosPublishItemsWA" }}
+	{{ $url := "https://upevszxcs2.execute-api.us-west-2.amazonaws.com/default/getOpinionsPublishItemsWA" }}
 	{{ $jsondata := getJSON $url }}
 	{{ with $jsondata }}
-	{{ range $jsondata }}
+		{{ range first 50 $jsondata }}
+			<tr>
+				<td><a href="{{ .file_name }}">{{ .case_name }}</a></td>
+				<td>{{ .case_num }}</td>
+				<td>{{ .case_origin }}</td>
+				<td>{{ .judge }} </td>
+				<td>{{ .case_type }}</td>
+				<td>{{ .short_date }}</td>
+			</tr>
+		{{ end }}
+	{{ else }}
+		<tr>
+			<td colspan='6'>I couldn't find any opinions! Boo.</td>
+		</tr>
 	{{ end }}
 
    <tr><td colspan='7' style='background-color: #EEEEEE; text-align: center; padding: 10px;'>                           

@@ -94,13 +94,16 @@
 
         <div id="autocomplete_authoring" style="margin-left: 30px; width:180px; position: absolute; text-align: left; background-color: #ffffff;"></div>
 
-        </td><td>
+        </td>
+	<!--
+	<td>
         Concurring/Dissenting Judge:<br>
         <input type="text" id="other_judges_lc-index" class="fields" onKeyUp="judgeLookup('other')">
-
         <div id="autocomplete_other" style="margin-left: 30px; width:180px; position: absolute; text-align: left; background-color: #ffffff;"></div>
-
-        </td><td>
+        </td>
+	-->
+		
+	<td>
         Case Type:<br>
         <select class="fields" id="case_type-index">
         <option value="">Select</option>
@@ -121,12 +124,13 @@
         <option value="Tax Court">Tax Court</option>
         </select>
         </td>
-        </tr>
-        <tr><td style="padding-left: 40px;">
+	<td style="padding-left: 40px;">
         Date Filed (mm/dd/yyyy):<br>
         <input type="text" class="fields" id="short_date-index" value="">
-        </td>
-
+        </td>	
+        </tr>
+        <tr>
+	<td>&nbsp;</td>
 
         <td style="padding: 14px 0 2px 0;" id="search-submit">
 
